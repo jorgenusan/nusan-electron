@@ -10,45 +10,92 @@
 <body>
     <!--Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Nusan</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="reportForm.html">Nuevo Parte</a>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Nusan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Partes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="reportForm.html">Nuevo Parte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="clients.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="employees.html">Empleados</a>
+            </li>
+          </ul>
+          <div class="dropdown d-flex">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Ajustes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Modo noche</label>
+                </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="reports.html">Partes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="clients.html">Clientes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="employees.html">Empleados</a>
-              </li>
+              <li><a class="dropdown-item" href="">Salir</a></li>
+              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
             </ul>
-            <div class="dropdown d-flex">
-              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Conectado
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                <li>
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Modo noche</label>
-                  </div>
-                </li>
-                <li><a class="dropdown-item" href="#">Salir</a></li>
-              </ul>
-            </div>
           </div>
         </div>
-      </nav>
-      <!--/.Navbar -->
+      </div>
+    </nav>
+    <!--/.Navbar -->
+
+    <!-- Container -->
+    <div class="container">
+      <h3>Parte</h3>
+      <!--Form Report-->
+      <form>
+        <div class="form-row d-flex">
+          <div class="form-group col-md-6">
+            <label for="inputDateStart">Fecha parte</label>
+            <input type="datetime-local" class="form-control" id="inputDateStart" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputDateApointment">Fecha cita</label>
+            <input type="datetime-local" class="form-control" id="inputDateApointment">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row d-flex">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+        <h3>Cliente</h3>
+        <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+      </form>
+      <!--Form final-->
+    </div>
+    <!-- /.Container -->
 
 
       <script src="../components/jQuery/jquery.min.js"></script>

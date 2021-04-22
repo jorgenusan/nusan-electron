@@ -11,8 +11,8 @@ function createWindow () {
       preload: path.join(__dirname, '../preload.js')
     }
   })
-
-  win.loadFile('src/views/index.html')
+  win.setMenu(null);
+  win.loadFile('src/views/login.html')
 }
 
 app.whenReady().then(() => {
