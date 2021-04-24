@@ -8,56 +8,7 @@
     <title>Nusan Software</title>
 </head>
 <body>
-    <!--Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Nusan</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="reports.html">Partes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="reportForm.html">Nuevo Parte</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="clients.html">Clientes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="employees.html">Empleados</a>
-            </li>
-          </ul>
-          <!-- Button trigger modal -->
-          <label for="Welcome">Bienvenido</label>
-          <button type="button" class="btn btn-primary ms-lg-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Cerrar sesión
-          </button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="staticBackdropLabel">Confirmar acción</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  ¿Estás seguro de cerrar la sesión?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                  <a href="login.html"><button type="button" class="btn btn-primary">Sí</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!--/.Navbar -->
+   <div id="navbar"></div>
 
     <!-- Container -->
     <div class="container mt-5 mb-5">
@@ -186,5 +137,6 @@
       <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="../index.js"></script>
 </body>
 </html>
