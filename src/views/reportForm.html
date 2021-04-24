@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Partes</a>
+              <a class="nav-link active" aria-current="page" href="reports.html">Partes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="reportForm.html">Nuevo Parte</a>
@@ -30,20 +30,29 @@
               <a class="nav-link active" aria-current="page" href="employees.html">Empleados</a>
             </li>
           </ul>
-          <div class="dropdown d-flex">
-            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Ajustes
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                  <label class="form-check-label" for="flexSwitchCheckDefault">Modo noche</label>
+          <!-- Button trigger modal -->
+          <label for="Welcome">Bienvenido</label>
+          <button type="button" class="btn btn-primary ms-lg-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Cerrar sesión
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Confirmar acción</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </li>
-              <li><a class="dropdown-item" href="">Salir</a></li>
-              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-            </ul>
+                <div class="modal-body">
+                  ¿Estás seguro de cerrar la sesión?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <a href="login.html"><button type="button" class="btn btn-primary">Sí</button></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -51,22 +60,29 @@
     <!--/.Navbar -->
 
     <!-- Container -->
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
+
+      <h1 class="text-center mb-4">Nuevo Parte</h1>
+
       <!--Form Report-->
-      <form>
+      <form class="needs-validation" novalidate>
         <h3>Parte</h3>
-        <div class="form-row d-flex">
-          <div class="form-group col-md-6">
-            <label for="inputDateStart">Fecha parte</label>
-            <input type="datetime-local" class="form-control" id="inputDateStart" required>
+        <hr>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="inputDateStart" class="form-label">Fecha parte *</label>
+            <input type="date" class="form-control" id="inputDateStart" value="" required>
+            <div class="invalid-feedback">
+              Selecciona una fecha.
+            </div>
           </div>
-          <div class="form-group col-md-6">
+          <div class="form-group col-sm">
             <label for="inputDateApointment">Fecha cita</label>
-            <input type="datetime-local" class="form-control" id="inputDateApointment">
+            <input type="date" class="form-control" id="inputDateApointment">
           </div>
         </div>
-        <div class="form-row d-flex">
-          <div class="form-group col-md-6">
+        <div class="form-row row">
+          <div class="form-group col-sm">
             <label for="inputPriority">Prioridad</label>
             <select class="form-control">
               <option>Sin definir</option>
@@ -75,13 +91,23 @@
               <option>Baja</option>
             </select>
           </div>
-          <div class="form-group col-md-6">
-            <label for="inputState">Estado</label>
-            <select class="form-control">
+          <div class="form-group col-sm">
+            <label for="inputState">Estado *</label>
+            <select class="form-control" required>
               <option>Abierto</option>
               <option>Pendiente</option>
               <option>Cerrado</option>
             </select>
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="inputMachine">Aparato</label>
+            <input type="text" class="form-control" id="inputMachine">
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputBrand">Marca</label>
+            <input type="text" class="form-control" id="inputBrand">
           </div>
         </div>
         <div class="form-group">
@@ -90,32 +116,67 @@
         </div>
         
         <!-- Cliente -->
-        <h3 class="mt-4">Cliente</h3>
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="form-row d-flex">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
+        <h3 class="mt-5">Cliente</h3>
+        <hr>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="selectClients">Clientes *</label>
+            <select class="form-control" id="selectClients" required>
+              <option>Nuevo</option>
             </select>
           </div>
-          <div class="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
+          <div class="form-group col-sm">
+            <label for="inputName">Nombre</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputLastName">Apellidos</label>
+            <input type="text" class="form-control" id="inputLastName">
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputDni">DNI</label>
+            <input type="text" class="form-control" id="inputDni">
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputTel">Teléfono</label>
+            <input type="tel" class="form-control" id="inputTel">
+          </div>
+        </div>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="inputAddress">Dirección</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputCity">Ciudad</label>
+            <input type="text" class="form-control" id="inputCity">
           </div>
         </div>
 
         <!--Empleado-->
-        <h3 class="mt-4">Empleado</h3>
-        <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        <h3 class="mt-5">Empleado</h3>
+        <hr>
+        <div class="form-row row">
+          <div class="form-group col-sm">
+            <label for="selectEmployees">Empleados</label>
+            <select class="form-control" id="selectEmployees">
+              <option>Nuevo</option>
+            </select>
+          </div>
+          <div class="form-group col-sm">
+            <label for="inputDateEnd">Fecha fin</label>
+            <input type="date" class="form-control" id="inputDateEnd">
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+        </div>
       </form>
       <!--Form final-->
     </div>

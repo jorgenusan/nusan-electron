@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Partes</a>
+              <a class="nav-link active" aria-current="page" href="reports.html">Partes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="reportForm.html">Nuevo Parte</a>
@@ -30,20 +30,29 @@
               <a class="nav-link active" aria-current="page" href="employees.html">Empleados</a>
             </li>
           </ul>
-          <div class="dropdown d-flex">
-            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-              Ajustes
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                  <label class="form-check-label" for="flexSwitchCheckDefault">Modo noche</label>
+          <!-- Button trigger modal -->
+          <label for="Welcome">Bienvenido</label>
+          <button type="button" class="btn btn-primary ms-lg-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Cerrar sesión
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Confirmar acción</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </li>
-              <li><a class="dropdown-item" href="">Salir</a></li>
-              <li><a class="dropdown-item" href="login.html">Cerrar sesión</a></li>
-            </ul>
+                <div class="modal-body">
+                  ¿Estás seguro de cerrar la sesión?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <a href="login.html"><button type="button" class="btn btn-primary">Sí</button></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +61,7 @@
 
 
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
