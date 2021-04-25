@@ -12,27 +12,40 @@
     <div id="navbar"></div>
 
     <!-- Container -->
-    <div class="container row mt-5 mb-5">
-        <div class="col-sm-12">
+    <div class="container">
+        <div class="col-sm-12 row">
           <table class="table table-hover table-condensed table-bordered">
+            <div class="mt-5 mb-2">
+              <a href="reportForm.html">
+                <button class="btn btn-primary">Nuevo</button>
+              </a>
+            </div> 
             <tr>
-              <td>Nombre</td>
-              <td>Apelido</td>
-              <td>Email</td>
-              <td>Teléfono</td>
-              <td>Editar</td>
-              <td>Eliminar</td>
+              <th>ID</td>
+              <th>Fecha inicio</th>
+              <th>Fecha cita</th>
+              <th>Aparato</th>
+              <th>Prioridad</th>
+              <th>Cliente</th>
+              <th>Empleado</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>1</td>
+              <td>25/04/2021</td>
+              <td>30/04/2021</td>
+              <td>Televisión</td>
+              <td>Media</td>
+              <td>Jorge Núñez Santiago</td>
+              <td>Álvaro</td>
               <td>
-                <button class="btn"></button>
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editReport">
+                  <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil">
+                </button>
               </td>
               <td>
-                <button class="btn"></button>
+                <button class="btn btn-danger"><img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete"></button>
               </td>
             </tr>
           </table>
@@ -42,10 +55,68 @@
         
     <!-- /.Container -->
 
+    <!--Modal-->
+
+    <!-- Modal -->
+<div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Parte </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="mb-4">
+          <div class="form-row row">
+            <div class="form-group col-sm">
+              <label for="inputDateStart">Fecha inicio</label>
+              <input type="date" class="form-control" id="inputDateStart" >
+            </div>
+            <div class="form-group col-sm">
+              <label for="inputDateApointment">Fecha cita</label>
+              <input type="date" class="form-control" id="inputDateStart" >
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-sm">
+              <label for="inputMachine">Aparato</label>
+              <input type="text" class="form-control" id="inputMachine">
+            </div>
+            <div class="form-group col-sm">
+              <label for="inputBrand">Marca</label>
+              <input type="text" class="form-control" id="inputBrand">
+            </div>
+            <div class="form-row row">
+              <div class="form-group col-sm">
+                <label for="selectClients">Cliente</label>
+                <select class="form-control" id="selectClients">
+                  <option>Nuevo</option>
+                </select>
+              </div>
+              <div class="form-group col-sm">
+                <label for="selectEmployees">Empleado</label>
+                <select class="form-control" id="selectEmployees">
+                  <option>Nuevo</option>
+                </select>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--/.Modal-->
+
 
       <script src="../../node_modules/jquery/dist/jquery.js"></script>
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
       <script src="../index.js"></script>
+    
 </body>
 </html>
