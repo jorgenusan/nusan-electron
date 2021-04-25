@@ -73,7 +73,7 @@
        <div class="form-row row">
          <div class="form-group col-sm">
            <label for="selectClients">Clientes *</label>
-           <select class="form-control" name="selectClients" id="selectClients">
+           <select class="form-control" name="selectClients" id="selectClients" onclick="getEmp()">
              
            </select>
          </div>
@@ -141,17 +141,18 @@
       <script src="../index.js"></script>
       <script>
           function getEmp(){
-              urlString = 'http://localhost:8080/allClients';
+              let urlString = 'http://localhost:8080/allClients';
               
-              $.ajax({method: "GET", url:urlString})
-              .done(function(response){
-                categoryDropDown = $("#selectClients");
-                $.each(response, function(index, category){
-                    alert(index + ": "+category.id + "-" + category.name);
-                });
+              $.ajax({
+                  type: "GET",
+                   url:urlString,
+                })
+              .done(function(){
+                alert("hola conectado");
 
               }).fail(function(){
                   alert("Error connection to the server");
+                  consol.log("Error connection to the server");
               }).always(function(){
                   alert("Always executed");
               });
