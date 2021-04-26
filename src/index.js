@@ -1,5 +1,5 @@
 $('#navbar').load('../components/navbar.html')
-
+/*
 document.querySelector('#btnLogin').addEventListener('click', guardarDatosLogin());
 
 function guardarDatosLogin(){
@@ -12,4 +12,5 @@ function guardarDatosLogin(){
     }
 
     console.log(login);
-}
+}*/
+
