@@ -57,28 +57,5 @@
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
       <script src="../index.js"></script>
-      <script>
-        function confirmLogin(){
-        let urlString = 'http://localhost:8080/login';
-        
-        $.ajax({ 
-          type: "PUT",
-          url:urlString,
-          dataType:'json',
-          data:JSON.stringify({
-            "email":document.getElementById("InputEmail").nodeValue,
-            "password":document.getElementById("InputPassword").nodeValue
-          })
-        }).done(function(){
-            alert("hola conectado");
-            console.log("hola conectado");
-          }).fail(function(){
-              alert("Error connection to the server");
-              console.log("Error connection to the server");
-          }).always(function(){
-              alert("Always executed");
-          });
-        }
-      </script>
   </body>
 </html>
