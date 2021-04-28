@@ -18,24 +18,37 @@
 
       <!--Form Report-->
       <form class="needs-validation" novalidate>
-        <h3>Parte</h3>
+        
+        <h3>
+          <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg" alt="">
+          Parte
+        </h3>
         <hr>
-        <div class="form-row row">
-          <div class="form-group col-sm">
-            <label for="inputDateStart" class="form-label">Fecha parte *</label>
+        <div class="form-row row ">
+          <div class="form-group col-sm mb-2">
+            <label for="inputDateStart">
+              <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg" >
+              Fecha parte
+            </label>
             <input type="date" class="form-control" id="inputDateStart" value="" required>
             <div class="invalid-feedback">
               Selecciona una fecha.
             </div>
           </div>
-          <div class="form-group col-sm">
-            <label for="inputDateApointment">Fecha cita</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputDateApointment">
+              <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+              Fecha cita
+            </label>
             <input type="date" class="form-control" id="inputDateApointment">
           </div>
         </div>
         <div class="form-row row">
-          <div class="form-group col-sm">
-            <label for="inputPriority">Prioridad</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputPriority">
+              <img src="../../node_modules/bootstrap-icons/icons/bar-chart.svg">
+              Prioridad
+            </label>
             <select class="form-control">
               <option>Sin definir</option>
               <option>Alta</option>
@@ -43,8 +56,11 @@
               <option>Baja</option>
             </select>
           </div>
-          <div class="form-group col-sm">
-            <label for="inputState">Estado *</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputState">
+              <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+              Estado *
+          </label>
             <select class="form-control" required>
               <option>Abierto</option>
               <option>Pendiente</option>
@@ -53,59 +69,86 @@
           </div>
         </div>
         <div class="form-row row">
-          <div class="form-group col-sm">
-            <label for="inputMachine">Aparato</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputMachine">
+              <img src="../../node_modules/bootstrap-icons/icons/tv.svg" alt="">
+              Aparato
+            </label>
             <input type="text" class="form-control" id="inputMachine">
           </div>
-          <div class="form-group col-sm">
-            <label for="inputBrand">Marca</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputBrand">
+              <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+              Marca
+            </label>
             <input type="text" class="form-control" id="inputBrand">
           </div>
         </div>
-        <div class="form-group">
-          <label for="FormControlTextarea">Observaciones</label>
+        <div class="form-group mb-2">
+          <label for="FormControlTextarea">
+            <img src="../../node_modules/bootstrap-icons/icons/fonts.svg" alt="">
+            Observaciones
+          </label>
           <textarea class="form-control" id="FormControlTextarea" rows="3"></textarea>
         </div>
         
         <!-- Cliente -->
-        <h3 class="mt-5">Cliente</h3>
+        <h3 class="mt-5">
+          <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+          Cliente
+        </h3>
         <hr>
         <div class="form-row row">
-          <div class="form-group col-sm">
-            <label for="selectClients">Clientes *</label>
+          <div class="form-group col-sm mb-2">
+            <label for="selectClients">
+              <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+              Clientes *
+            </label>
             <select class="form-control" id="selectClients" required>
               <option>Nuevo</option>
             </select>
           </div>
-          <div class="form-group col-sm">
-            <label for="inputName">Nombre</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputName">
+              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+              Nombre
+            </label>
             <input type="text" class="form-control" id="inputName">
           </div>
           <div class="form-group col-sm">
-            <label for="inputLastName">Apellidos</label>
+            <label for="inputLastName">
+              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+              Apellidos
+            </label>
             <input type="text" class="form-control" id="inputLastName">
           </div>
         </div>
         <div class="form-row row">
-          <div class="form-group col-sm">
-            <label for="inputEmail">Email</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputEmail">
+              <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
+              Email
+            </label>
             <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
           </div>
-          <div class="form-group col-sm">
-            <label for="inputDni">DNI</label>
+          <div class="form-group col-sm mb-2">
+            <label for="inputDni">
+              <img src="../../node_modules/bootstrap-icons/icons/card-text.svg" alt="">
+              DNI
+            </label>
             <input type="text" class="form-control" id="inputDni">
           </div>
-          <div class="form-group col-sm">
+          <div class="form-group col-sm mb-2">
             <label for="inputTel">Teléfono</label>
             <input type="tel" class="form-control" id="inputTel">
           </div>
         </div>
         <div class="form-row row">
-          <div class="form-group col-sm">
+          <div class="form-group col-sm mb-2">
             <label for="inputAddress">Dirección</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
           </div>
-          <div class="form-group col-sm">
+          <div class="form-group col-sm mb-2">
             <label for="inputCity">Ciudad</label>
             <input type="text" class="form-control" id="inputCity">
           </div>
@@ -115,13 +158,13 @@
         <h3 class="mt-5">Empleado</h3>
         <hr>
         <div class="form-row row">
-          <div class="form-group col-sm">
+          <div class="form-group col-sm mb-2">
             <label for="selectEmployees">Empleados</label>
             <select class="form-control" id="selectEmployees">
               <option>Nuevo</option>
             </select>
           </div>
-          <div class="form-group col-sm">
+          <div class="form-group col-sm mb-2">
             <label for="inputDateEnd">Fecha fin</label>
             <input type="date" class="form-control" id="inputDateEnd">
           </div>
@@ -138,6 +181,6 @@
       <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../index.js"></script>
+      <script src="../js/content.js"></script>
 </body>
 </html>
