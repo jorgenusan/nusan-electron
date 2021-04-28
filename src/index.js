@@ -1,5 +1,31 @@
 $('#navbar').load('../components/navbar.html')
 
+
+$(document).ready(function(){
+    $("form").submit(function(event){
+        
+        var formData = JSON.stringify({
+            email: $("#InputEmail").val(),
+            password: $("#InputPassword").val()
+        });
+        console.log(formData);
+        $.ajax({
+            type:"POST",
+            url: "http://localhost:8080/login",
+            data: formData,
+            dataType:"json",
+            contentType: 'application/json; charset=utf-8'
+        }).done(function(data){
+            console.log(data);
+            console.log("done");
+        }).fail(function(error){
+            console.log(error);
+            console.log("error");
+        })
+
+    });
+});
+/*
 function confirmLogin(){
     let urlString = 'http://localhost:8080/login';
     let email =$('#InputEmail').val();
@@ -29,4 +55,4 @@ function confirmLogin(){
         .fail(function() {
             console.log("Email o contraseña incorrecto.");
         })
-  }
+  }*/
