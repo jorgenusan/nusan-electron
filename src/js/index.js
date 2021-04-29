@@ -4,6 +4,7 @@ $(document).ready(function(){
             email: $("#InputEmail").val(),
             password: $("#InputPassword").val()
         });
+console.log(formData);
         $.ajax({
             type:"POST",
             url: "http://localhost:8080/login",
