@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Nusan Software</title>
 </head>
 <body>
@@ -12,9 +13,50 @@
   <div id="navbar"></div>
 
 
+  <!--Container-->
+  <div class="container">
+    <h1 class="text-primary text-center">Clientes</h1>
+    <hr class="bg-primary">
+    <div class="row" id="contenido">
+      <!--Contenido de employees.js-->
+    </div>
+  </div>
+  <!--./Container-->
+
+
+  <!--editModal-->
+
+  <!--./editModal-->
+
+  <!--deleteModal-->
+  <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModal">Confirmar acción</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Quieres eliminar este empleado?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <a href="login.html"><button type="button" class="btn btn-primary">Sí</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--./deleteModal-->
+
+<!--Icono "up"-->
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+</a>
+
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="../js/content.js"></script>
+  <script src="../js/global.js"></script>
+  <script src="../js/clients.js"></script>
 </body>
 </html>

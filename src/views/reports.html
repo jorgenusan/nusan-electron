@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Nusan Software</title>
 </head>
 <body>
@@ -13,31 +14,25 @@
 
     <!-- Container -->
     <div class="container">
+      <h1 class="text-center text-primary">Partes</h1>
+      <hr class="bg-primary">
       <div class="mt-5 mb-2">
         <a href="reportForm.html">
           <button class="btn btn-primary">Nuevo</button>
         </a>
       </div>
-      <button class="btn btn-danger" id="obtener">Obtener</button>
-      <div id="contenido">
-
-      </div>
-
-
-
-
-      <!-- 
-        <div class="table-responsive col-sm-12 row">
-          <table class="table table-hover table-condensed table-bordered">
-            
-              
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
             <thead>
               <tr>
                 <th scope="col">ID</td>
                 <th scope="col">Fecha inicio</th>
+                <th scope="col">Fecha fin</th>
                 <th scope="col">Fecha cita</th>
-                <th scope="col">Aparato</th>
                 <th scope="col">Prioridad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Aparato</th>
+                <th scope="col">marca</th>
                 <th scope="col">Cliente</th>
                 <th scope="col">Empleado</th>
                 <th scope="col">Editar</th>
@@ -45,34 +40,15 @@
               </tr>
             </thead>
             <tbody id="contenido">
-
+             <!--Contenido de reports.js-->
             </tbody>
-            
-            <tr>
-              <td>1</td>
-              <td>25/04/2021</td>
-              <td>30/04/2021</td>
-              <td>Televisión</td>
-              <td>Media</td>
-              <td>Jorge Núñez Santiago</td>
-              <td>Álvaro</td>
-              <td>
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editReport">
-                  <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil">
-                </button>
-              </td>
-              <td>
-                <button class="btn btn-danger"><img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete"></button>
-              </td>
-            </tr>-->
           </table>
-        </div>
-          
+        </div> 
     </div>
         
     <!-- /.Container -->
 
-    <!--Modal-->
+
 
     <!-- Modal -->
 <div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
@@ -129,11 +105,16 @@
 
     <!--/.Modal-->
 
+<!--Icono "up"-->
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+</a>
 
       <script src="../../node_modules/jquery/dist/jquery.js"></script>
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-      <script src="../js/content.js"></script>
+      <script src="../js/global.js"></script>
+      <script src="../js/reports.js"></script>
     
 </body>
 </html>

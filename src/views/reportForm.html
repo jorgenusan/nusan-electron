@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Nusan Software</title>
 </head>
 <body>
@@ -12,12 +13,13 @@
    <div id="navbar"></div>
 
     <!-- Container -->
-    <div class="container mt-5 mb-5">
+    <div class="container mb-5">
 
-      <h1 class="text-center mb-4">Nuevo Parte</h1>
+      <h1 class="text-center text-primary">Nuevo Parte</h1>
+      <hr class="bg-primary">
 
       <!--Form Report-->
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation pt-3" novalidate>
         
         <h3>
           <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg" alt="" width="32">
@@ -105,7 +107,7 @@
               Clientes *
             </label>
             <select class="form-control" id="selectClients" required>
-              <option>Nuevo</option>
+              <!--reportForm.js-->
             </select>
           </div>
           <div class="form-group col-sm mb-2">
@@ -176,7 +178,7 @@
               Empleados
             </label>
             <select class="form-control" id="selectEmployees">
-              <option>Nuevo</option>
+              
             </select>
           </div>
           <div class="form-group col-sm mb-2">
@@ -195,10 +197,15 @@
     </div>
     <!-- /.Container -->
 
+    <!--Icono "up"-->
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+</a>
 
       <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
       <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../js/content.js"></script>
+      <script src="../js/global.js"></script>
+      <script src="../js/reportForm.js"></script>
 </body>
 </html>
