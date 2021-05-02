@@ -30,6 +30,9 @@ function card(data){
     console.log(data);
     contenido.innerHTML='';
     for(let valor of data){
+
+        let eliminarIdCli = valor.idcli;
+
         contenido.innerHTML += ` 
         <div class="col-sm-4 mb-4">
             <div class="card">
