@@ -25,11 +25,13 @@ function tabla(data){
     console.log(data);
     contenido.innerHTML='';
     for(let valor of data){
-        var datosRep = [valor.id, valor.startDate, valor.endingDate, valor.dateApointment, valor.priority, valor.state, valor.machine, valor.brand, valor.observations, valor.payment,valor.paymentMethod, valor.idCli, valor.idEmp];
+        //Guardo el id del parte a crear
+        var datosRep = valor.id;
 
+        //creo la tabla
         contenido.innerHTML += ` 
         <tr>
-            <td>${ valor.id }</td>
+            <td scope="row">${ valor.id }</td>
             <td>${ valor.startDate }</td>
             <td>${ valor.endingDate }</td>
             <td>${ valor.dateApointment }</td>
@@ -52,10 +54,12 @@ function tabla(data){
         </tr>`
     }
 }
-
+//recibe el id del parte y carga los datos en el modal
 function datosModal(datos){
 
-    $('#idEdit').val(datos[0]);
+    console.log(datos);
+
+    $('#idEdit').val(datos);
     $('#dateStartEdit').val(datos[1]);
     $('#dateEndEdit').val(datos[2]);
     $('#dateApointmentEdit').val(datos[3]);

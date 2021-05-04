@@ -65,3 +65,21 @@ function empOptions(data){
         `
     }  
 }
+
+
+$("form").submit(function(event){
+
+    let dateStart= $("#inputDateStart").val();
+    let dateApointment= $("#inputDateApointment").val();
+    let dateEnd= $("#inputDateEnd").val();
+    let priority= $("#inputPriority").val();
+    let state= $("#inputState").val();
+    let machine= $("#inputMachine").val();
+    let brand= $("#inputBrand").val();
+    let controlTextarea= $("#FormControlTextarea").val();
+    let dateStart= $("#inputDateStart").val();
+    let dateStart= $("#inputDateStart").val();
+
+
+    event.preventDefault();
+});
