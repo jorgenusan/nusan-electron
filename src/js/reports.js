@@ -24,6 +24,7 @@ function traer(){
 function tabla(data){
     console.log(data);
     contenido.innerHTML='';
+    let x=1;
     for(let valor of data){
         //Guardo el id del parte a crear
         var datosRep = valor.id;
@@ -31,33 +32,34 @@ function tabla(data){
         //creo la tabla
         contenido.innerHTML += ` 
         <tr>
-            <td scope="row">${ valor.id }</td>
-            <td>${ valor.startDate }</td>
-            <td>${ valor.endingDate }</td>
-            <td>${ valor.dateApointment }</td>
-            <td>${ valor.priority }</td>
-            <td>${ valor.state }</td>
-            <td>${ valor.machine }</td>
-            <td>${ valor.brand }</td>
-            <td>${ valor.idCli }</td>
-            <td>${ valor.idEmp }</td>
-            <td>
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editReport" onclick="${datosModal(datosRep)}">
+            <td scope="row" class="text-center">${ valor.id }</td>
+            <td class="text-center">${ valor.endingDate }</td>
+            <td class="text-center">${ valor.startDate }</td>
+            <td class="text-center">${ valor.dateApointment }</td>
+            <td class="text-center">${ valor.priority }</td>
+            <td class="text-center">${ valor.state }</td>
+            <td class="text-center">${ valor.machine }</td>
+            <td class="text-center">${ valor.brand }</td>
+            <td class="text-center">${ valor.idCli }</td>
+            <td class="text-center">${ valor.idEmp }</td>
+            <td class="text-center">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editReport" id="modalEdit${x}" onclick="${datosModal(datosRep)}">
                     <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil">
                 </button>
             </td>
-            <td>
+            <td class="text-center">
                 <button class="btn btn-danger">
                 <img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete">
                 </button>
             </td>
         </tr>`
+        x= x + 1;
     }
 }
 //recibe el id del parte y carga los datos en el modal
 function datosModal(datos){
-
-    console.log(datos);
+    let prueba =$(event.currentTarget).id;
+    console.log(prueba);
 
     $('#idEdit').val(datos);
     $('#dateStartEdit').val(datos[1]);
