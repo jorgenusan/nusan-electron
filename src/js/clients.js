@@ -50,7 +50,7 @@ function card(data){
                  ${valor.email}
                  </p>
                 <p class="card-text">
-                <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-back-fill.svg">
+                <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
                  ${valor.dni}
                  </p>
                  <p class="card-text">
