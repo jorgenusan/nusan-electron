@@ -77,9 +77,6 @@ $("form").submit(function(event){
     let machine= $("#inputMachine").val();
     let brand= $("#inputBrand").val();
     let controlTextarea= $("#FormControlTextarea").val();
-    let dateStart= $("#inputDateStart").val();
-    let dateStart= $("#inputDateStart").val();
-
 
     event.preventDefault();
 });

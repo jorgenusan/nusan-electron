@@ -24,15 +24,10 @@ function traer(){
 function tabla(data){
     console.log(data);
     contenido.innerHTML='';
-    let x=1;
     for(let valor of data){
-        //Guardo el id del parte a crear
-        var datosRep = valor.id;
-
-        //creo la tabla
         contenido.innerHTML += ` 
         <tr>
-            <td scope="row" class="text-center">${ valor.id }</td>
+            <td scope="row" class="text-center" id="idRep">${ valor.id }</td>
             <td class="text-center">${ valor.endingDate }</td>
             <td class="text-center">${ valor.startDate }</td>
             <td class="text-center">${ valor.dateApointment }</td>
@@ -43,8 +38,8 @@ function tabla(data){
             <td class="text-center">${ valor.idCli }</td>
             <td class="text-center">${ valor.idEmp }</td>
             <td class="text-center">
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editReport" id="modalEdit${x}" onclick="${datosModal(datosRep)}">
-                    <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil">
+                <button type="button" class="btn btn-warning" id="editModal">
+                    <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="pencil">
                 </button>
             </td>
             <td class="text-center">
@@ -53,14 +48,33 @@ function tabla(data){
                 </button>
             </td>
         </tr>`
-        x= x + 1;
     }
 }
 //recibe el id del parte y carga los datos en el modal
-function datosModal(datos){
-    let prueba =$(event.currentTarget).id;
-    console.log(prueba);
 
+$("table").on("click", function(evt) {
+    var btn = evt.target;
+    if(btn.tagName==="IMG"){
+        var row = btn.parentNode.parentNode.parentNode;  //buton than td than tr
+       getTdId(row);
+    }
+    if(btn.tagName==="BUTTON"){
+        var row = btn.parentNode.parentNode;  //td than tr
+        getTdId(row);
+    }
+});
+
+function getTdId(row){
+    var cells = row.getElementsByTagName("td"); //cells
+    var id = cells[0].textContent;
+    console.log(id);
+
+    //hacer búsqueda por id y abrir el modal
+    //$('#editReport').modal('show');
+}
+
+
+    /*
     $('#idEdit').val(datos);
     $('#dateStartEdit').val(datos[1]);
     $('#dateEndEdit').val(datos[2]);
@@ -74,6 +88,7 @@ function datosModal(datos){
     $('#paymentMethodEdit').val(datos[10]);
     $('#selectClientsEdit').val(datos[11]);
     $('#selectEmployeesEdit').val(datos[12]);
+    */
 
-}
+
 
