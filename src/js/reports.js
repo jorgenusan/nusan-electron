@@ -52,7 +52,7 @@ function tabla(data){
 
 //comprueba en dónde se está pulsando
 $("table").on("click", function(evt) {
-    //si se pulsa editar
+    //recogemos el botón pulsado
     var btn = evt.target;
     
     if(btn.tagName==="IMG" && btn.id === "imgEditModal"){
