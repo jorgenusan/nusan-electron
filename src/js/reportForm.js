@@ -23,11 +23,10 @@ function clients(){
 }
 
 function cliOptions(data){
-    console.log(data);
     selectClients.innerHTML='<option>Nuevo</option>';
     for(let valor of data){
         selectClients.innerHTML += `
-        <option>${valor.name} ${valor.lastName}</option>
+        <option>${valor.id} - ${valor.name} ${valor.lastName}</option>
         `
     }  
 }
@@ -57,11 +56,10 @@ function employees(){
 }
 
 function empOptions(data){
-    console.log(data);
     selectEmployees.innerHTML='<option>Selecionar empleado</option>';
     for(let valor of data){
         selectEmployees.innerHTML += `
-        <option>${valor.name} ${valor.lastName}</option>
+        <option>${valor.id} - ${valor.name} ${valor.lastName}</option>
         `
     }  
 }
@@ -69,14 +67,106 @@ function empOptions(data){
 
 $("form").submit(function(event){
 
-    let dateStart= $("#inputDateStart").val();
-    let dateApointment= $("#inputDateApointment").val();
-    let dateEnd= $("#inputDateEnd").val();
-    let priority= $("#inputPriority").val();
-    let state= $("#inputState").val();
-    let machine= $("#inputMachine").val();
-    let brand= $("#inputBrand").val();
-    let controlTextarea= $("#FormControlTextarea").val();
+    var client = $("#selectClients").val();
+    if(client === "Nuevo"){
+        createNewClient();
+    }else{
+
+        let cli= $("#selectClients").val();
+        let exp = new RegExp("[0-9]+");
+        let result = cli.match(exp);
+
+        createNewReport(result[0]);
+    }
 
     event.preventDefault();
 });
+
+function createNewClient(){
+
+    var formData = JSON.stringify({
+        name: $("#inputName").val(),
+        lastName: $("#inputLastName").val(),
+        dni: $('#inputDni').val(),
+        email: $('#inputEmail').val(),
+        phoneNumber: $('#inputTel').val(),
+        city: $('#inputCity').val(),
+        address: $('#inputAddress').val()
+    });
+    
+    $.ajax({
+        type:"POST",
+        url: "http://localhost:8080/client",
+        data: formData,
+        contentType: "application/json"
+    }).done(function(data){
+        let idClient = data.id;
+        createNewReport(idClient);
+        console.log("cliente creado");
+    }).fail(function(error){
+        alert("Error al crear el cliente.")
+    })
+
+}
+
+function createNewReport(idClient){
+    let emp= $("#selectEmployees").val();
+    let exp = new RegExp("[0-9]+");
+    let result = emp.match(exp);
+    let idEmployee;
+    if(result == null){
+        idEmployee = "";
+    }else{
+        idEmployee = result[0];
+    }
+    
+    var formData = JSON.stringify({
+        dateStart: $("#inputDateStart").val(),
+        dateEnd: $("#inputDateEnd").val(),
+        dateApointment: $("#inputDateApointment").val(),
+        priority: $("#inputPriority").val(),
+        state: $("#inputState").val(),
+        machine: $("#inputMachine").val(),
+        brand: $("#inputBrand").val(),
+        controlTextarea: $("#FormControlTextarea").val(),
+        idEmp : idEmployee,
+        idCli : idClient
+    });
+
+    console.log(formData);
+
+    $.ajax({
+        type:"POST",
+        url: "http://localhost:8080/report",
+        data: formData,
+        contentType: "application/json"
+    }).done(function(data){
+        alert("El parte ha sido creado.");
+        console.log("parte creado");
+        clear();
+    }).fail(function(error){
+        alert("Error al crear el parte.")
+    })
+
+
+}
+function clear(){
+    $("#inputDateStart").val("");
+    $("#inputDateApointment").val("");
+    $("#inputPriority").val("");
+    $("#inputState").val("");
+    $("#inputMachine").val("");
+    $("#inputBrand").val("");
+    $("#FormControlTextarea").val("");
+    $("#selectClients").val("");
+    $("#inputName").val("");
+    $("#inputLastName").val("");
+    $("#inputEmail").val("");
+    $("#inputDni").val("");
+    $("#inputTel").val("");
+    $("#inputAddress").val("");
+    $("#inputCity").val("");
+    $("#selectEmployees").val("");
+    $("#inputDateEnd").val("");
+    
+}

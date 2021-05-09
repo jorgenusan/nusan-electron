@@ -20,6 +20,7 @@ $(document).ready(function(){
                 contentType: "application/json"
             }).done(function(data){
                 alert("El empleado ha sido creado correctamente.");
+                clean();
             }).fail(function(error){
                 alert("Error al crear el empleado.")
             })
@@ -29,6 +30,17 @@ $(document).ready(function(){
         
         event.preventDefault();
     });
+
+    function clean(){
+        $("#inputName").val("");
+        $("#inputLastName").val("");
+        $('#inputDni').val("");
+        $('#inputEmail').val("");
+        $('#inputTel').val("");
+        $('#inputRol').val("");
+        $('#inputPassword').val("");
+        $('#inputPassword2').val("");
+    }
 
 });
     

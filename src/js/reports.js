@@ -1,5 +1,5 @@
-window.onload = traer();
-function traer(){
+window.onload = getData();
+function getData(){
         
     var getReports = JSON.stringify({
         "numPage": 0,
@@ -22,7 +22,6 @@ function traer(){
 }
 
 function tabla(data){
-    console.log(data);
     contenido.innerHTML='';
     for(let valor of data){
         contenido.innerHTML += ` 
@@ -38,57 +37,110 @@ function tabla(data){
             <td class="text-center">${ valor.idCli }</td>
             <td class="text-center">${ valor.idEmp }</td>
             <td class="text-center">
-                <button type="button" class="btn btn-warning" id="editModal">
-                    <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="pencil">
+                <button type="button" class="btn btn-warning" id="btnEditModal">
+                    <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="imgEditModal">
                 </button>
             </td>
             <td class="text-center">
-                <button class="btn btn-danger">
-                <img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete">
+                <button class="btn btn-danger" id="btnDeleteModal">
+                    <img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete" id="imgDeleteModal">
                 </button>
             </td>
         </tr>`
     }
 }
-//recibe el id del parte y carga los datos en el modal
 
+//comprueba en dónde se está pulsando
 $("table").on("click", function(evt) {
+    //si se pulsa editar
     var btn = evt.target;
-    if(btn.tagName==="IMG"){
+    
+    if(btn.tagName==="IMG" && btn.id === "imgEditModal"){
         var row = btn.parentNode.parentNode.parentNode;  //buton than td than tr
        getTdId(row);
     }
-    if(btn.tagName==="BUTTON"){
+    if(btn.tagName==="BUTTON" && btn.id === "btnEditModal"){
         var row = btn.parentNode.parentNode;  //td than tr
         getTdId(row);
     }
+
+    //Si se pulsa eliminar
+    if(btn.tagName==="IMG" && btn.id === "imgDeleteModal"){
+        var row = btn.parentNode.parentNode.parentNode;  //buton than td than tr
+        createDeleteModal(row);
+    }
+    if(btn.tagName==="BUTTON" && btn.id === "btnDeleteModal"){
+        var row = btn.parentNode.parentNode;  //td than tr
+        createDeleteModal(row);
+    }
 });
 
+//coge el ID de la fila y carga los datos en el modal
 function getTdId(row){
     var cells = row.getElementsByTagName("td"); //cells
     var id = cells[0].textContent;
-    console.log(id);
 
-    //hacer búsqueda por id y abrir el modal
-    //$('#editReport').modal('show');
+    $.ajax({
+        type:"GET",
+        url: "http://localhost:8080/report/"+id,
+    }).done(function(data){
+        openEditModal(data);
+    }).fail(function(error){
+        alert("Error al obtener los datos del parte.", error);
+    })
 }
 
+//añade los datos en el modal
+function openEditModal(data){
+    $('#editReport').modal('show');
+    $('#idEdit').val(data.id);
+    $('#dateStartEdit').val(data.startDate);
+    $('#dateEndEdit').val(data.endingDate);
+    $('#dateApointmentEdit').val(data.dateApointment);
+    $('#priorityEdit').val(data.priority);
+    $('#stateEdit').val(data.state);
+    $('#machineEdit').val(data.machine);
+    $('#brandEdit').val(data.brand);
+    $('#textareaEdit').val(data.observations);
+    $('#paymentEdit').val(data.payment);
+    $('#paymentMethodEdit').val(data.paymentMethod);
+    $('#selectClientsEdit').val(data.idCli);
+    $('#selectEmployeesEdit').val(data.idEmp);
+}
 
-    /*
-    $('#idEdit').val(datos);
-    $('#dateStartEdit').val(datos[1]);
-    $('#dateEndEdit').val(datos[2]);
-    $('#dateApointmentEdit').val(datos[3]);
-    $('#priorityEdit').val(datos[4]);
-    $('#stateEdit').val(datos[5]);
-    $('#machineEdit').val(datos[6]);
-    $('#brandEdit').val(datos[7]);
-    $('#textareaEdit').val(datos[8]);
-    $('#paymentEdit').val(datos[9]);
-    $('#paymentMethodEdit').val(datos[10]);
-    $('#selectClientsEdit').val(datos[11]);
-    $('#selectEmployeesEdit').val(datos[12]);
-    */
+//crear botones modal
+function createDeleteModal(row){
+    var cells = row.getElementsByTagName("td"); //cells
+    var id = cells[0].textContent;
+
+    modalBtn.innerHTML=''; //limpiamos los botones del modal
+
+    //creamos los botones del modal pasando el id que se quiere eliminar.
+    modalBtn.innerHTML += `
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+    <button type="button" class="btn btn-primary" onclick="deleteYes(${id})">Sí</button>
+    `
+    //mostramos modal
+    $('#deleteModal').modal('show');
+}
+
+//Eliminar un parte
+function deleteYes(id, btn){
+    var deleteId = id;
+
+    $.ajax({
+        type:"DELETE",
+        url: "http://localhost:8080/report/"+deleteId,
+    }).done(function(data){
+        $('#deleteModal').modal('hide');
+        alert("Parte eliminado correctamente");
+        location.reload();
+    }).fail(function(error){
+        alert("Error al eliminar el parte.", error);
+    })
+}
+
+   
 
 
 
