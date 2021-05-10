@@ -25,7 +25,6 @@ function clients(){
 
 
 function card(data){
-    console.log(data);
     contenido.innerHTML='';
     for(let valor of data){
 
@@ -45,7 +44,7 @@ function card(data){
                         <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg">
                         ${valor.email}
                     </p>
-                    <p class="dni card-text">
+                    <p class="card-text" id="dni">
                         <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
                         ${valor.dni}
                     </p>
@@ -76,31 +75,134 @@ $("#contenido").on("click", function(evt) {
 
     //si pulsa eliminar
     if(btn.tagName==="BUTTON" && btn.id === "btnEditModal"){
-        var row = btn.parentNode.parentNode;  //td than tr
-        console.log("edit");
-        var cells = row.getElementsByClassName("card-body"); //cells
-        var dni = cells[0].textContent;
-        console.log(dni);
+        var card = btn.parentNode.parentNode;
+        var container = card.getElementsByTagName("div"); //cells
+        var div = container[1].getElementsByTagName("p");
+        var dni = div[2].textContent;
+        getCardId(dni.trim());
+        
     }
 
     //Si se pulsa eliminar
     if(btn.tagName==="BUTTON" && btn.id === "btnDeleteModal"){
-        var row = btn.parentNode.parentNode;  //td than tr
-        console.log("delete");
+        var card = btn.parentNode.parentNode;
+        var container = card.getElementsByTagName("div"); //cells
+        var div = container[1].getElementsByTagName("p");
+        var dni = div[2].textContent;
+        btnDeleteClientModal(dni.trim());
     }
 
 });
 
 //coge el ID de la fila y carga los datos en el modal
-function getCardId(id){
- 
-    /*
+function getCardId(data){
+    var dni = data;
+
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/client/"+id,
+        url: "http://localhost:8080/clientdni/"+dni,
     }).done(function(data){
-        openEditModal(data);
+        openEditClientModal(data);
     }).fail(function(error){
         alert("Error al obtener los datos del parte.", error);
-    })*/
+    })
+}
+
+function openEditClientModal(data){
+    $('#editClientModal').modal('show');
+    $('#idEdit').val(data.id);
+    $('#inputName').val(data.name);
+    $('#inputLastName').val(data.lastName);
+    $('#inputEmail').val(data.email);
+    $('#inputDni').val(data.dni);
+    $('#inputTel').val(data.phoneNumber);
+    $('#inputAddress').val(data.address);
+    $('#inputCity').val(data.city);
+
+}
+
+function saveChanges(){
+    var id = $("#idEdit").val();
+
+    var formData = JSON.stringify([
+    {
+		"op":"replace",
+		"path":"/name",
+		"value": $("#inputName").val()
+	},
+    {
+		"op":"replace",
+		"path":"/lastName",
+		"value":  $("#inputLastName").val()
+	},
+    {
+		"op":"replace",
+		"path":"/dni",
+		"value": $('#inputDni').val()
+	},
+    {
+		"op":"replace",
+		"path":"/email",
+		"value": $('#inputEmail').val()
+	},
+    {
+		"op":"replace",
+		"path":"/phoneNumber",
+		"value": $('#inputTel').val()
+	},
+    {
+		"op":"replace",
+		"path":"/city",
+		"value": $('#inputCity').val()
+	},
+    {
+		"op":"replace",
+		"path":"/address",
+		"value": $('#inputAddress').val()
+	}]);
+
+    console.log(formData);
+    $.ajax({
+        type:"PATCH",
+        url: "http://localhost:8080/client/"+id,
+        data: formData,
+        contentType: "application/json-patch+json"
+    }).done(function(data){
+        location.reload();
+        $('#editClientModal').modal('hide');
+        alert("El cliente ha sido modificado correctamente.");
+    }).fail(function(error){
+        alert("Error al modificar el cliente.")
+    })    
+}
+
+
+//crear botones modal
+function btnDeleteClientModal(data){
+    var dni = data;
+
+    deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
+
+    //creamos los botones del modal pasando el id que se quiere eliminar.
+    deleteCliBtn.innerHTML += `
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+    <button type="button" class="btn btn-primary" onclick="deleteClient(${dni})">Sí</button>
+    `
+    //mostramos modal
+    $('#deleteCliModal').modal('show');
+}
+
+function deleteClient(dni){
+    var deleteDni = dni;
+
+    $.ajax({
+        type:"DELETE",
+        url: "http://localhost:8080/clientdni/"+deleteDni,
+    }).done(function(data){
+        $('#deleteClientModal').modal('hide');
+        alert("Cliente eliminado correctamente");
+        location.reload();
+    }).fail(function(error){
+        alert("Error al eliminar el cliente.", error);
+    })
 }

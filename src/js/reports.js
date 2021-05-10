@@ -125,7 +125,7 @@ function createDeleteModal(row){
 }
 
 //Eliminar un parte
-function deleteYes(id, btn){
+function deleteYes(id){
     var deleteId = id;
 
     $.ajax({

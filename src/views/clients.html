@@ -32,35 +32,113 @@
   </div>
   <!--./Container-->
 
-
-  <!--editModal-->
-
-  <!--./editModal-->
-
-  <!--deleteModal-->
-  <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+  <!-- Modal -->
+  <div class="modal fade" id="editClientModal" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="deleteModal">Confirmar acción</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Editar Cliente</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ¿Quieres eliminar este empleado?
+          <form class="mb-4">
+            <div class="form-row row ">
+              <div class="form-group col-sm mb-2">
+                <label for="selectClients">
+                  <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+                  ID
+                </label>
+                <input type="text" class="form-control" id="idEdit" disabled="disabled">
+              </div>
+              <div class="form-group col-sm mb-2">
+                <label for="inputName">
+                  <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+                  Nombre
+                </label>
+                <input type="text" class="form-control" id="inputName">
+              </div>
+              <div class="form-group col-sm">
+                <label for="inputLastName">
+                  <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+                  Apellidos
+                </label>
+                <input type="text" class="form-control" id="inputLastName">
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="form-group col-sm mb-2">
+                <label for="inputEmail">
+                  <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
+                  Email
+                </label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+              </div>
+              <div class="form-group col-sm mb-2">
+                <label for="inputDni">
+                  <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
+                  DNI
+                </label>
+                <input type="text" class="form-control" id="inputDni">
+              </div>
+              <div class="form-group col-sm mb-2">
+                <label for="inputTel">
+                  <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
+                  Teléfono
+                </label>
+                <input type="tel" class="form-control" id="inputTel">
+              </div>
+            </div>
+            <div class="form-row row">
+              <div class="form-group col-sm mb-2">
+                <label for="inputAddress">
+                  <img src="../../node_modules/bootstrap-icons/icons/house-fill.svg" alt="">
+                  Dirección
+                </label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              </div>
+              <div class="form-group col-sm mb-2">
+                <label for="inputCity">
+                  <img src="../../node_modules/bootstrap-icons/icons/geo-alt-fill.svg" alt="">
+                  Ciudad
+                </label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary" onclick="deleteClient()">Sí</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="saveChanges()">Guardar cambios</button>
         </div>
       </div>
     </div>
   </div>
-  <!--./deleteModal-->
+  <!--/.Modal-->
 
-<!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
+
+    <!--deleteModal-->
+    <div class="modal fade" id="deleteCliModal" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteCliModal">Confirmar acción</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Quieres eliminar este cliente?
+          </div>
+          <div class="modal-footer" id="deleteCliBtn">
+            <!--contenido js-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--./deleteModal-->
+  
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+  </a>
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
