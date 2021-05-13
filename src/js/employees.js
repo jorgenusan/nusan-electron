@@ -49,6 +49,10 @@ function card(data){
                 <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-back-fill.svg">
                  ${valor.dni}
                  </p>
+                 <p class="card-text">
+                <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg">
+                 ${valor.rol}
+                 </p>
             </div>
             <div class="card-footer text-muted">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">

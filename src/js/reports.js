@@ -24,18 +24,24 @@ function getData(){
 function tabla(data){
     contenido.innerHTML='';
     for(let valor of data){
+        if(valor.endingDate == null){
+            valor.endingDate = "Sin fecha";
+        }
+        if(valor.dateApointment == null){
+            valor.dateApointment = "Sin fecha";
+        }
         contenido.innerHTML += ` 
         <tr>
             <td scope="row" class="text-center" id="idRep">${ valor.id }</td>
-            <td class="text-center">${ valor.endingDate }</td>
             <td class="text-center">${ valor.startDate }</td>
+            <td class="text-center">${ valor.endingDate }</td>
             <td class="text-center">${ valor.dateApointment }</td>
             <td class="text-center">${ valor.priority }</td>
             <td class="text-center">${ valor.state }</td>
             <td class="text-center">${ valor.machine }</td>
             <td class="text-center">${ valor.brand }</td>
-            <td class="text-center">${ valor.idCli }</td>
-            <td class="text-center">${ valor.idEmp }</td>
+            <td class="text-center">${ valor.client.name } ${ valor.client.lastName }</td>
+            <td class="text-center">${ valor.employees.name } ${ valor.employees.lastName }</td>
             <td class="text-center">
                 <button type="button" class="btn btn-warning" id="btnEditModal">
                     <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="imgEditModal">
@@ -104,8 +110,8 @@ function openEditModal(data){
     $('#textareaEdit').val(data.observations);
     $('#paymentEdit').val(data.payment);
     $('#paymentMethodEdit').val(data.paymentMethod);
-    $('#selectClientsEdit').val(data.idCli);
-    $('#selectEmployeesEdit').val(data.idEmp);
+    $('#selectClientsEdit').val(data.client.name);
+    $('#selectEmployeesEdit').val(data.employees.name);
 }
 
 //crear botones modal
