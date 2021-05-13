@@ -44,7 +44,7 @@ function card(data){
                         <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg">
                         ${valor.email}
                     </p>
-                    <p class="card-text" id="dni">
+                    <p class="card-text">
                         <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
                         ${valor.dni}
                     </p>
@@ -79,7 +79,7 @@ $("#contenido").on("click", function(evt) {
         var container = card.getElementsByTagName("div"); //cells
         var div = container[1].getElementsByTagName("p");
         var dni = div[2].textContent;
-        getCardId(dni.trim());
+        getCardDni(dni.trim());
         
     }
 
@@ -94,13 +94,29 @@ $("#contenido").on("click", function(evt) {
 
 });
 
-//coge el ID de la fila y carga los datos en el modal
-function getCardId(data){
+//crear botones modal
+function btnDeleteClientModal(data){
+    var dni = data;
+
+    deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
+
+    //creamos los botones del modal pasando el id que se quiere eliminar.
+    deleteCliBtn.innerHTML +=
+    `
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+    <button type="button" class="btn btn-primary" onclick="deleteClient(${dni})">Sí</button>
+    `
+    //mostramos modal
+    $('#deleteCliModal').modal('show');
+}
+
+//coge el DNI de la fila y carga los datos en el modal
+function getCardDni(data){
     var dni = data;
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/clientdni/"+dni,
+        url: "http://localhost:8080/clientDni/"+dni,
     }).done(function(data){
         openEditClientModal(data);
     }).fail(function(error){
@@ -118,7 +134,6 @@ function openEditClientModal(data){
     $('#inputTel').val(data.phoneNumber);
     $('#inputAddress').val(data.address);
     $('#inputCity').val(data.city);
-
 }
 
 function saveChanges(){
@@ -177,21 +192,7 @@ function saveChanges(){
 }
 
 
-//crear botones modal
-function btnDeleteClientModal(data){
-    var dni = data;
 
-    deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
-
-    //creamos los botones del modal pasando el id que se quiere eliminar.
-    deleteCliBtn.innerHTML +=
-    `
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick="deleteClient(${dni})">Sí</button>
-    `
-    //mostramos modal
-    $('#deleteCliModal').modal('show');
-}
 
 function deleteClient(dni){
     var deleteDni = dni;
