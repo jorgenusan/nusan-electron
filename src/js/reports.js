@@ -116,7 +116,8 @@ function createDeleteModal(row){
     modalBtn.innerHTML=''; //limpiamos los botones del modal
 
     //creamos los botones del modal pasando el id que se quiere eliminar.
-    modalBtn.innerHTML += `
+    modalBtn.innerHTML +=
+    `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
     <button type="button" class="btn btn-primary" onclick="deleteYes(${id})">Sí</button>
     `

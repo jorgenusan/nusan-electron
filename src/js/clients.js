@@ -184,7 +184,8 @@ function btnDeleteClientModal(data){
     deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
 
     //creamos los botones del modal pasando el id que se quiere eliminar.
-    deleteCliBtn.innerHTML += `
+    deleteCliBtn.innerHTML +=
+    `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
     <button type="button" class="btn btn-primary" onclick="deleteClient(${dni})">Sí</button>
     `
@@ -205,4 +206,5 @@ function deleteClient(dni){
     }).fail(function(error){
         alert("Error al eliminar el cliente.", error);
     })
+
 }
