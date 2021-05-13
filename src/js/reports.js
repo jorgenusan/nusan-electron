@@ -40,7 +40,9 @@ function tabla(data){
             <td class="text-center">${ valor.state }</td>
             <td class="text-center">${ valor.machine }</td>
             <td class="text-center">${ valor.brand }</td>
-            <td class="text-center">${ valor.client.name } ${ valor.client.lastName }</td>
+            <td class="text-center">${ valor.client.name } ${ valor.client.lastName } <br>
+                Telf: ${valor.client.phoneNumber}
+            </td>
             <td class="text-center">${ valor.employees.name } ${ valor.employees.lastName }</td>
             <td class="text-center">
                 <button type="button" class="btn btn-warning" id="btnEditModal">

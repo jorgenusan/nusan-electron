@@ -121,16 +121,16 @@ function createNewReport(idClient){
     }
     
     var formData = JSON.stringify({
-        dateStart: $("#inputDateStart").val(),
-        dateEnd: $("#inputDateEnd").val(),
+        startDate: $("#inputDateStart").val(),
+        endingDate: $("#inputDateEnd").val(),
         dateApointment: $("#inputDateApointment").val(),
         priority: $("#inputPriority").val(),
         state: $("#inputState").val(),
         machine: $("#inputMachine").val(),
         brand: $("#inputBrand").val(),
-        controlTextarea: $("#FormControlTextarea").val(),
-        idEmp : idEmployee,
-        idCli : idClient
+        observations: $("#FormControlTextarea").val(),
+        client : { id: idClient},
+        employees : {id : idEmployee}
     });
 
     console.log(formData);
