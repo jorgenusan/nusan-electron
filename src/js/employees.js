@@ -93,13 +93,13 @@ $("#contenido").on("click", function(evt) {
 //crear botones modal
 function btnDeleteEmployeeModal(data){
     var dni = data;
-    btnDeleteEmp.innerHTML=``; //limpiamos los botones del modal
+    btnDeleteEmp.innerHTML=''; //limpiamos los botones del modal
 
     //creamos los botones del modal pasando el id que se quiere eliminar.
     btnDeleteEmp.innerHTML +=
     `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick="deleteEmp(${dni})">Sí</button>
+    <button type="button" class="btn btn-primary" onclick=\"deleteEmp('${dni}')\">Sí</button>
     `
     //mostramos modal
     $('#deleteEmpModal').modal('show');
@@ -110,13 +110,13 @@ function deleteEmp(dni){
 
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/clientdni/"+deleteDni,
+        url: "http://localhost:8080/employeesDni/"+deleteDni,
     }).done(function(data){
         $('#deleteEmpModal').modal('hide');
-        alert("Cliente eliminado correctamente");
+        alert("Empleado eliminado correctamente");
         location.reload();
     }).fail(function(error){
-        alert("Error al eliminar el cliente.", error);
+        alert("Error al eliminar el empleado.", error);
     })
 
 }

@@ -104,7 +104,7 @@ function btnDeleteClientModal(data){
     deleteCliBtn.innerHTML +=
     `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick="deleteClient(${dni})">Sí</button>
+    <button type="button" class="btn btn-primary" onclick=\"deleteClient('${dni}')\">Sí</button>
     `
     //mostramos modal
     $('#deleteCliModal').modal('show');
@@ -199,7 +199,7 @@ function deleteClient(dni){
 
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/clientdni/"+deleteDni,
+        url: "http://localhost:8080/clientDni/"+deleteDni,
     }).done(function(data){
         $('#deleteClientModal').modal('hide');
         alert("Cliente eliminado correctamente");
