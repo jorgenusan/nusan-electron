@@ -1,6 +1,5 @@
 @media screen and (max-width: 320px) {
     #logoNusan{
-      
       src: url("../img/locoCompleto170.png");
     }
     #back-to-top {
@@ -19,5 +18,15 @@
   right: 25px;
   display: none;
 }
+.forgot-password{
+  color: gray;
+}
+.forgot-password:hover{
+  border-radius: 5px;
+  background-color: rgb(187, 184, 184);
+  color: white;
+  padding: 2px;
+}
+
 
   

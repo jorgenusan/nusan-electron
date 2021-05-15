@@ -10,21 +10,20 @@
       <title>Nusan Software</title>
       
   </head>
-  <body>
+  <body class="m-0 vh-100 row justify-content-around align-content-center">
     <!--Load the navbar-->
     <div id="navbar"></div>
 
     <!-- Container -->
-    <div class="container mt-5">
-      <div class="row justify-content-center">
+    <div class="container col-md-auto mt-5">
+      <div class="row justify-content-center border rounded-3 ">
         <!-- Title -->
-        <div class="text-center mb-3 pt-5" id="contenedorImg">
-          <img id="logoNusan" src="../img/LogoCompleto300.png" alt="Responsive image" class="img-fluid">
+        <div class="text-center mb-4 pt-5" id="contenedorImg">
+          <img id="logoNusan" src="../img/LogoCompleto250.png" alt="Responsive image" class="img-fluid">
         </div>
         
         <!-- Form -->
-        <form class="col-md-6 mb-5">
-          <hr class="bg-primary mb-5">
+        <form class="col-10 mb-5 mt-5">
           <div class="mb-3">
             <label for="InputEmail" class="form-label">
               <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
@@ -41,7 +40,7 @@
             <div class="input-group" id="show_hide_password">
               <input type="password" class="form-control" id="InputPassword" placeholder="*******" required>
               <div class="input-group-addon">
-                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-slash-fill.svg" ></a>
+                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" ></a>
               </div>
             </div>
           </div>
@@ -50,6 +49,11 @@
             <label class="form-check-label" for="exampleCheck1">Recordarme</label>
           </div>
           <button type="submit" class="btn btn-primary" id="btnLogin">Iniciar sesión</button>
+          
+          <div class="mt-5 pt-3 text-center">
+            <hr>
+            <a href="#" class="forgot-password text-decoration-none">¿Ha olvidado su contraseña?</a>
+          </div>
         </form>
         <!-- /.Form -->
       </div>
