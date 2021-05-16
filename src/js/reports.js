@@ -31,35 +31,72 @@ function tabla(data){
             valor.dateApointment = "Sin fecha";
         }
         contenido.innerHTML += ` 
-        <tr>
-            <td scope="row" class="text-center" id="idRep">${ valor.id }</td>
-            <td class="text-center">${ valor.startDate }</td>
-            <td class="text-center">${ valor.endingDate }</td>
-            <td class="text-center">${ valor.dateApointment }</td>
-            <td class="text-center">${ valor.priority }</td>
-            <td class="text-center">${ valor.state }</td>
-            <td class="text-center">${ valor.machine }</td>
-            <td class="text-center">${ valor.brand }</td>
-            <td class="text-center">${ valor.client.name } ${ valor.client.lastName } <br>
-                Telf: ${valor.client.phoneNumber}
-            </td>
-            <td class="text-center">${ valor.employees.name } ${ valor.employees.lastName }</td>
-            <td class="text-center">
-                <button type="button" class="btn btn-warning" id="btnEditModal">
-                    <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="imgEditModal">
-                </button>
-            </td>
-            <td class="text-center">
-                <button class="btn btn-danger" id="btnDeleteModal">
-                    <img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete" id="imgDeleteModal">
-                </button>
-            </td>
-        </tr>`
+        <div class="card">
+            <div class="row card-body">
+                <div class="col-md-4 col-lg mb-4">
+                    <p class="card-text">
+                        <img src="../../node_modules/bootstrap-icons/icons/clipboard.svg">
+                        Nº: ${valor.id}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+                        Estado: ${valor.state}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/bar-chart-fill.svg">
+                        Prioridad: ${valor.priority}
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg mb-4">
+                    <p class="card-text">
+                        <img src="../../node_modules/bootstrap-icons/icons/tv-fill.svg" alt="">
+                        ${valor.machine}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+                        ${valor.brand}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+                        ${valor.dateApointment}
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg mb-4">
+                    <p class="card-text">
+                        <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+                        ${valor.client.name} ${valor.client.lastName}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg">
+                        ${valor.client.phoneNumber}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
+                        ${valor.client.email}
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg mb-4">
+                    <p class="card-text">
+                        <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">  
+                        ${valor.employees.name} ${valor.employees.lastName}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/calendar3-week.svg">
+                        Inicio: ${valor.startDate}
+                        <br>
+                        <img src="../../node_modules/bootstrap-icons/icons/calendar3-week-fill.svg">
+                        Fin: ${valor.endingDate}
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-1">
+                    <button type="button" class="btn btn-warning" id="btnEditModal">
+                        <img src="../../node_modules/bootstrap-icons/icons/pencil.svg" alt="edit pencil" id="imgEditModal">
+                    </button>
+                    <button class="btn btn-danger mt-3" id="btnDeleteModal">
+                        <img src="../../node_modules/bootstrap-icons/icons/x.svg" alt="delete" id="imgDeleteModal">
+                    </button>
+                </div>
+            </div>
+        </div>
+        `
     }
 }
 
 //comprueba en dónde se está pulsando
-$("table").on("click", function(evt) {
+$("#contenido").on("click", function(evt) {
     //recogemos el botón pulsado
     var btn = evt.target;
     
@@ -85,12 +122,15 @@ $("table").on("click", function(evt) {
 
 //coge el ID de la fila y carga los datos en el modal
 function getTdId(row){
-    var cells = row.getElementsByTagName("td"); //cells
-    var id = cells[0].textContent;
+    var div = row.getElementsByTagName("div");
+    var p = div[0].getElementsByTagName("p"); 
+    var id = p[0].textContent;
+    var idreport = id.trim().match("[0-9]+")
+
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/report/"+id,
+        url: "http://localhost:8080/report/"+idreport,
     }).done(function(data){
         openEditModal(data);
     }).fail(function(error){
@@ -100,8 +140,10 @@ function getTdId(row){
 
 //crear botones modal
 function createDeleteModal(row){
-    var cells = row.getElementsByTagName("td"); //cells
-    var id = cells[0].textContent;
+    var div = row.getElementsByTagName("div");
+    var p = div[0].getElementsByTagName("p"); 
+    var id = p[0].textContent;
+    var idreport = id.trim().match("[0-9]+")
 
     modalBtn.innerHTML=''; //limpiamos los botones del modal
 
@@ -109,7 +151,7 @@ function createDeleteModal(row){
     modalBtn.innerHTML +=
     `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick="deleteYes(${id})">Sí</button>
+    <button type="button" class="btn btn-primary" onclick="deleteYes(${idreport})">Sí</button>
     `
     //mostramos modal
     $('#deleteModal').modal('show');
