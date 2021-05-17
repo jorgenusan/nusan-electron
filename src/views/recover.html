@@ -15,7 +15,7 @@
     <div id="navbar"></div>
 
     <!-- Container -->
-    <div class="container col-md-auto mt-5">
+    <div class="container col-md-8 col-lg-7 col-xl-5 col-xxl-4 mt-5">
       <div class="row justify-content-center border rounded-3 ">
         <!-- Title -->
         <div class="text-center mb-4 pt-5" id="contenedorImg">
@@ -24,36 +24,18 @@
         
         <!-- Form -->
         <form class="col-10 mb-5 mt-5">
-          <div class="mb-3">
-            <label for="InputEmail" class="form-label">
-              <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
-              Email
-            </label>
-            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="email@example.com" required>
-            <div id="emailHelp" class="form-text">No compartiremos su email con nadie.</div>
-          </div>
-          <div class="mb-3">
-            <label for="InputPassword" class="form-label">
-              <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
-              Contraseña
-            </label>
-            <div class="input-group" id="show_hide_password">
-              <input type="password" class="form-control" id="InputPassword" placeholder="*******" required>
-              <div class="input-group-addon">
-                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" ></a>
-              </div>
+            <div class="mb-5">
+                <h2>La contraseña se enviará a tu correo.</h2>
             </div>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-          </div>
-          <button type="submit" class="btn btn-primary" id="btnLogin">Iniciar sesión</button>
-          
-          <div class="mt-5 pt-3 text-center">
-            <hr>
-            <a href="./recover.html" class="forgot-password text-decoration-none">¿Ha olvidado su contraseña?</a>
-          </div>
+            <div class="mb-5">
+                <label for="InputEmail" class="form-label">
+                <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+                Email
+                </label>
+                <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="email@example.com" required>
+            </div>
+          <a href="./login.html" class="btn btn-primary">Cancelar</a>
+          <button type="submit" class="btn btn-primary" id="btnLogin">Enviar</button>
         </form>
         <!-- /.Form -->
       </div>
