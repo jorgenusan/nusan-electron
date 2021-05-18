@@ -12,7 +12,7 @@
     <!--Load the navbar-->
     <div id="navbar"></div>
     
-    <div class="container">
+    <div class="container" id="contenido">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="open-tab" data-bs-toggle="tab" data-bs-target="#open" type="button" role="tab" aria-controls="open" aria-selected="true">Partes abiertos</button>
@@ -26,10 +26,188 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="open" role="tabpanel" aria-labelledby="open-tab"></div>
-        <div class="tab-pane fade" id="today" role="tabpanel" aria-labelledby="today-tab">...</div>
-        <div class="tab-pane fade" id="week" role="tabpanel" aria-labelledby="week-tab">...</div>
+
+      </div>
+      <div class="tab-content" id="myTabContent2">
+        <div class="tab-pane fade" id="today" role="tabpanel" aria-labelledby="today-tab"></div>
       </div>
     </div>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Parte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="mb-4">
+          <h3>
+            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg" alt="" width="32">
+            Parte
+          </h3>
+          <hr>
+          <div class="form-row row ">
+            <div class="form-group col-sm mb-2">
+              <label for="brandEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+                ID
+              </label>
+              <input type="text" class="form-control" id="idEdit" disabled="disabled">
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="dateStartEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg" >
+                Fecha parte
+              </label>
+              <input type="date" class="form-control" id="dateStartEdit" value="" required>
+            </div>
+          </div>
+          <div class="form-row row ">
+            <div class="form-group col-sm mb-2">
+              <label for="dateApointmentEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+                Fecha cita
+              </label>
+              <input type="date" class="form-control" id="dateApointmentEdit">
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="dateEndEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg" >
+                Fecha fin
+              </label>
+              <input type="date" class="form-control" id="dateEndEdit">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-sm mb-2">
+              <label for="priorityEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/bar-chart-fill.svg">
+                Prioridad
+              </label>
+              <select class="form-control" id="priorityEdit">
+                <option>Sin definir</option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="stateEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+                Estado *
+            </label>
+              <select class="form-control" id="stateEdit" required>
+                <option>Abierto</option>
+                <option>Pendiente</option>
+                <option>Cerrado</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-sm mb-2">
+              <label for="machineEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/tv.svg" alt="">
+                Aparato
+              </label>
+              <input type="text" class="form-control" id="machineEdit">
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="brandEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+                Marca
+              </label>
+              <input type="text" class="form-control" id="brandEdit">
+            </div>
+          </div>
+          <div class="form-row row">
+            <div class="form-group col-sm mb-2">
+              <label for="paymentEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/cash-stack.svg" alt="">
+                Pago
+              </label>
+              <input type="text" class="form-control" id="paymentEdit">
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="paymentMethodEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/wallet2.svg" alt="">
+                Método de pago
+              </label>
+              <select class="form-control" id="paymentMethodEdit" required>
+                <option>Seleccionar método</option>
+                <option>Efectivo</option>
+                <option>Tarjeta</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label for="textareaEdit">
+              <img src="../../node_modules/bootstrap-icons/icons/fonts.svg" alt="">
+              Observaciones
+            </label>
+            <textarea class="form-control" id="textareaEdit" rows="3"></textarea>
+          </div>
+          
+          <!-- Asignación -->
+          <h3 class="mt-5">
+            <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="" width="32">
+            Asignación
+          </h3>
+          <hr>
+          <div class="form-row row">
+            <div class="form-group col-sm mb-2">
+              <label for="selectClientsEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+                Cliente
+              </label>
+              <input type="text" class="form-control" id="selectClientsEdit" disabled="disabled">
+            </div>
+            <div class="form-group col-sm mb-2">
+              <label for="selectEmployeesEdit">
+                <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">  
+                Empleado
+              </label>
+              <select class="form-control" id="selectEmployeesEdit">
+                
+              </select>
+            </div>
+          </div>
+            
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <a onclick="createDeleteModal()" class="btn btn-danger">Eliminar</a>
+        <div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="saveReportsChanges()">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--/.Modal-->
+
+    <!--deleteModal-->
+  <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModal">Confirmar acción</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Quieres eliminar este Parte?
+        </div>
+        <div class="modal-footer" id="modalBtn">
+          <!--contenido js-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--./deleteModal-->
 
     <!--Icono "up"-->
     <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
@@ -42,5 +220,6 @@
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../js/global.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/btnEditReport.js"></script>
   </body>
 </html>

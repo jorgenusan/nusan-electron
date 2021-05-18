@@ -17,3 +17,9 @@ $(document).ready(function(){
 			return false;
 		});
 });
+
+//formato de fecha como lo acepta el backend
+function convertDateFormat(string) {
+    var info = string.split('/').reverse().join('-');
+    return info;
+}

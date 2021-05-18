@@ -29,56 +29,6 @@
         <!--js-->
       </div>
 
-
-
-      <!--
-        <div class="table-responsive">
-          <table class="table table-striped table-bordered" id="reports">
-            <thead>
-              <tr>
-                <th scope="col" class="text-center">ID</td>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
-                  Fecha inicio</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
-                  Fecha fin</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
-                  Fecha cita</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/bar-chart-fill.svg">
-                  Prioridad</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg">
-                  Estado</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/tv.svg">
-                  Aparato</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg">
-                  marca</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg">
-                  Cliente</th>
-                <th scope="col" class="text-center">
-                  <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg">  
-                  Empleado</th>
-                <th scope="col" class="text-center">Editar</th>
-                <th scope="col" class="text-center">Eliminar</th>
-              </tr>
-            </thead>
-            <tbody id="contenido">
-             Contenido de reports.js
-            </tbody>
-          </table>
-        </div> -->
-    </div>
-        
-    <!-- /.Container -->
-
-
-
     <!-- Modal -->
 <div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -222,9 +172,12 @@
             
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" onclick="saveReportsChanges()">Guardar cambios</button>
+      <div class="modal-footer justify-content-between">
+        <a onclick="createDeleteModal()" class="btn btn-danger">Eliminar</a>
+        <div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" onclick="saveReportsChanges()">Guardar cambios</button>
+        </div>
       </div>
     </div>
   </div>
@@ -261,6 +214,7 @@
       <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
       <script src="../js/global.js"></script>
       <script src="../js/reports.js"></script>
+      <script src="../js/btnEditReport.js"></script>
     
 </body>
 </html>

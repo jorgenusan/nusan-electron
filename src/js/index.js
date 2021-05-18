@@ -1,14 +1,24 @@
 window.onload = openReports()
 
+function openReports(){
+    $.ajax({
+        type:"GET",
+        url: "http://localhost:8080/reportFilter/Abierto"
+    }).done(function(data){
+        tableReportOpen(data, 0) ;
+    }).fail(function(error){
+        alert("Error al obtener los partes abiertos.", error);
+    })
+}
+
 $(function(){
 
-    $('#open-tab').on('click', function(e){
-        
-        
-    });
-
     $('#today-tab').on('click', function(e){
-         
+        
+        const date = new Date();
+        var today = date.toISOString();
+        var dateFormat = today.match(/^\d{4}\-\d{2}\-\d{2}/)
+        todayReports(dateFormat[0]);
         
     });
 
@@ -17,23 +27,36 @@ $(function(){
         
     });
     
-});
+})
 
-function openReports(){
+function todayReports(formatDate){
+    var today = formatDate
+
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/reportState/Abierto"
+        url: "http://localhost:8080/reportFilter/"+today
     }).done(function(data){
-        tableReportOpen(data) ;
+        tableReportOpen(data, 1)
+        
     }).fail(function(error){
-        alert("Error al obtener los partes abiertos.", error);
+        alert("Error al obtener los partes de hoy.", error);
     })
 }
 
-function tableReportOpen(data){
+
+function tableReportOpen(data, x){
+    //TODO no funciona
+    let open;
+
+    if(x == 0 ){
+        open = myTabContent.getElementsByTagName("div")
+    }
+    if(x==1){
+        open = myTabContent2.getElementsByTagName("div")
+    }
+    
 
     if(data.length == 0){
-        var open = myTabContent.getElementsByTagName("div")
         open[0].innerHTML=`
         <div class="card">
                 <div class="row card-body">
@@ -46,8 +69,8 @@ function tableReportOpen(data){
             </div>
         `;
     }else{
-
-        var open = myTabContent.getElementsByTagName("div")
+        console.log(open)
+        console.log(open[x])
         open[0].innerHTML='';
     
         for(let valor of data){
@@ -57,9 +80,9 @@ function tableReportOpen(data){
             if(valor.dateApointment == null){
                 valor.dateApointment = "Sin fecha";
             }
+            
     
             open[0].innerHTML+=`
-    
                 <div class="card">
                 <div class="row card-body">
                     <div class="col-md-4 col-lg mb-4">
@@ -110,12 +133,17 @@ function tableReportOpen(data){
                             Fin: ${valor.endingDate}
                         </p>
                     </div>
+                    <div class="col-md-2 col-lg-1 row text-center">
+                        <button type="button" class="btn btn-primary" id="btnEditModal">Editar</button>
+                    </div>
                 </div>
             </div>`
         }
-    }
-    
-}
+    } 
+}  
 
-//TODO encapsular la funcionalidad de editar parte. Dejar solo un botón de editar y eliminar dentro del modal
-//TODO mirar como encapsular los modales
+
+
+
+
+
