@@ -1,11 +1,14 @@
 window.onload = openReports()
 
 function openReports(){
+
+    var openContent = myTabContent.getElementsByTagName("div");
+
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/reportFilter/Abierto"
+        url: "http://localhost:8080//reportFilter/Abierto/field/1"
     }).done(function(data){
-        tableReportOpen(data, 0) ;
+        tableReportOpen(data, openContent[0]) ;
     }).fail(function(error){
         alert("Error al obtener los partes abiertos.", error);
     })
@@ -18,6 +21,7 @@ $(function(){
         const date = new Date();
         var today = date.toISOString();
         var dateFormat = today.match(/^\d{4}\-\d{2}\-\d{2}/)
+        
         todayReports(dateFormat[0]);
         
     });
@@ -32,11 +36,13 @@ $(function(){
 function todayReports(formatDate){
     var today = formatDate
 
+    var todayContent = document.getElementById("today");
+
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/reportFilter/"+today
+        url: "http://localhost:8080//reportFilter/"+today+"/field/2"
     }).done(function(data){
-        tableReportOpen(data, 1)
+        tableReportOpen(data, todayContent)
         
     }).fail(function(error){
         alert("Error al obtener los partes de hoy.", error);
@@ -44,20 +50,13 @@ function todayReports(formatDate){
 }
 
 
-function tableReportOpen(data, x){
+function tableReportOpen(data, content){
     //TODO no funciona
-    let open;
-
-    if(x == 0 ){
-        open = myTabContent.getElementsByTagName("div")
-    }
-    if(x==1){
-        open = myTabContent2.getElementsByTagName("div")
-    }
     
+    var contenido = content;
 
     if(data.length == 0){
-        open[0].innerHTML=`
+        contenido.innerHTML=`
         <div class="card">
                 <div class="row card-body">
                     <div class="text-center">
@@ -69,9 +68,8 @@ function tableReportOpen(data, x){
             </div>
         `;
     }else{
-        console.log(open)
-        console.log(open[x])
-        open[0].innerHTML='';
+        console.log("donde va a crear las cosas: "+ contenido)
+        contenido.innerHTML='';
     
         for(let valor of data){
             if(valor.endingDate == null){
@@ -82,7 +80,7 @@ function tableReportOpen(data, x){
             }
             
     
-            open[0].innerHTML+=`
+            contenido.innerHTML+=`
                 <div class="card">
                 <div class="row card-body">
                     <div class="col-md-4 col-lg mb-4">
