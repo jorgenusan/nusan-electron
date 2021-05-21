@@ -28,5 +28,13 @@
   padding: 2px;
 }
 
+.body{
+  background-image: url("../img/degradado_fondo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 
   
