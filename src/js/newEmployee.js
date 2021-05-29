@@ -2,6 +2,8 @@ $(document).ready(function(){
     $("form").submit(function(event){
         password= $('#inputPassword').val();
         password2= $('#inputPassword2').val();
+        console.log(password)
+        console.log(password2)
         if(password == password2){
             var formData = JSON.stringify({
                 name: $("#inputName").val(),
@@ -9,7 +11,7 @@ $(document).ready(function(){
                 dni: $('#inputDni').val(),
                 email: $('#inputEmail').val(),
                 phoneNumber: $('#inputTel').val(),
-                rol: $('#inputRol').val().toLowerCase(),
+                rol: $('#inputRol').val(),
                 password: $('#inputPassword').val()
             });
         

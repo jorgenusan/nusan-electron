@@ -31,7 +31,7 @@ function tabla(data){
             valor.dateApointment = "Sin fecha";
         }
         contenido.innerHTML+=`
-                <div class="card">
+            <div class="card">
                 <div class="row card-body">
                     <div class="col-md-4 col-lg mb-4">
                         <p class="card-text">

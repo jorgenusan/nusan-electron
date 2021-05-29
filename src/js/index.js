@@ -1,16 +1,16 @@
-window.onload = openReports()
+window.onload = userReports()
 
-function openReports(){
+function userReports(){
 
-    var openContent = myTabContent.getElementsByTagName("div");
+    var userContent = myTabContent.getElementsByTagName("div");
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080//reportFilter/Abierto/field/1"
+        url: "http://localhost:8080//reportFilter/8/field/3"
     }).done(function(data){
-        tableReportOpen(data, openContent[0]) ;
+        tableReportOpen(data, userContent[0]) ;
     }).fail(function(error){
-        alert("Error al obtener los partes abiertos.", error);
+        alert("Error al obtener los partes del usuario.", error);
     })
 }
 
@@ -26,8 +26,18 @@ $(function(){
         
     });
 
-    $('#week-tab').on('click', function(e){
-         
+    $('#open-tab').on('click', function(e){
+        var openContent = document.getElementById("open");
+
+        $.ajax({
+            type:"GET",
+            url: "http://localhost:8080//reportFilter/Abierto/field/1"
+        }).done(function(data){
+            tableReportOpen(data, openContent)
+            
+        }).fail(function(error){
+            alert("Error al obtener los partes de hoy.", error);
+        })
         
     });
     
@@ -45,8 +55,9 @@ function todayReports(formatDate){
         tableReportOpen(data, todayContent)
         
     }).fail(function(error){
-        alert("Error al obtener los partes de hoy.", error);
+        alert("Error al obtener los partes abiertos.", error);
     })
+
 }
 
 
