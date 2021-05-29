@@ -89,5 +89,27 @@ function tabla(data){
     }
 } 
 
+//mirar cómo ocultar las cards
+function searchFunction(){
 
+    //variables
+    let input = document.getElementById("searchState");
+    let filter = input.value.toUpperCase();
+    let card = document.getElementById("contenido");
+    let div = card.getElementsByTagName("div"); 
+
+    for(let i = 0; i<5;i++){
+
+        let p = div[i].getElementsByTagName("p");
+        let pText = p[0].textContent;
+        //console.log(pText)
+
+        if(pText.toUpperCase().includes(filter)==true){
+            
+        }else{
+            card.getElementsByTagName("div")[i].hide();
+        }
+    }
+
+}
 

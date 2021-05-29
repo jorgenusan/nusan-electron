@@ -73,7 +73,7 @@
       <hr class="bg-primary">
       
 
-      <div class="">
+      <div>
         <div class="form-row row mb-2">
           <div class="input-group col-sm col-md">
             <a href="reportForm.html">
@@ -103,130 +103,18 @@
             </div>
           </div>
         </div>
-        <div class="form-row row">
-          <div class="input-group col-sm mb-1">
+        <div class="form-row row mb-2">
+          <div class="input-group col-sm col-md">
             <div class="input-group-addon">
               <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
+                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
               </a>
             </div>
-            <select class="form-select" id="stateSearch">
-              <option value="1">Abierto</option>
-              <option value="2">Pendiente</option>
-              <option value="3">Cerrado</option>
-            </select>
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <select class="form-select" id="prioritySearch">
-              <option value="1">Sin definir</option>
-              <option value="2">Alta</option>
-              <option value="3">Media</option>
-              <option value="4">Baja</option>
-            </select>
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <input type="text" class="form-control" id="clientDniSearch" aria-describedby="clientDniSearch" placeholder="DNI cliente">
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <input type="text" class="form-control" id="clientDniSearch" aria-describedby="clientDniSearch" placeholder="DNI cliente">
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
+            <input type="state" class="form-control" id="searchState" placeholder="Búsqueda por Estado" >
+            <button class="btn" onclick="searchFunction()">click</button>
           </div>
         </div>
-
-        <div class="form-row row">
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <select class="form-select" id="stateSearch">
-              <option value="1">Abierto</option>
-              <option value="2">Pendiente</option>
-              <option value="3">Cerrado</option>
-            </select>
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <select class="form-select" id="prioritySearch">
-              <option value="1">Sin definir</option>
-              <option value="2">Alta</option>
-              <option value="3">Media</option>
-              <option value="4">Baja</option>
-            </select>
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <input type="text" class="form-control" id="clientDniSearch" aria-describedby="clientDniSearch" placeholder="DNI cliente">
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-          <div class="input-group col-sm mb-1">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <input type="text" class="form-control" id="clientDniSearch" aria-describedby="clientDniSearch" placeholder="DNI cliente">
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-        </div>
-        <div class="form-row row mb-2 col-xl-3 col-lg-3">
-          <div class="input-group">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg">
-              </a>
-            </div>
-            <input type="text" class="form-control" id="clientDniSearch" aria-describedby="clientDniSearch" placeholder="DNI cliente">
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">OK</button>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <div id="contenido">

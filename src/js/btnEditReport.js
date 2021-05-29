@@ -1,24 +1,24 @@
 //comprueba en dónde se está pulsando
 $("#contenido").on("click", function(evt) {
     //recogemos el botón pulsado
-    var btn = evt.target;
+    let btn = evt.target;
     
     if(btn.tagName==="IMG" && btn.id === "imgEditModal"){
-        var row = btn.parentNode.parentNode.parentNode;  //buton than td than tr
+        let row = btn.parentNode.parentNode.parentNode;  //buton than td than tr
        getTdId(row);
     }
     if(btn.tagName==="BUTTON" && btn.id === "btnEditModal"){
-        var row = btn.parentNode.parentNode;  //td than tr
+        let row = btn.parentNode.parentNode;  //td than tr
         getTdId(row);
     }
 });
 
 //coge el ID de la fila y carga los datos en el modal
 function getTdId(row){
-    var div = row.getElementsByTagName("div");
-    var p = div[0].getElementsByTagName("p"); 
-    var id = p[0].textContent;
-    var idreport = id.trim().match("[0-9]+")
+    let div = row.getElementsByTagName("div");
+    let p = div[0].getElementsByTagName("p"); 
+    let id = p[0].textContent;
+    let idreport = id.trim().match("[0-9]+")
 
 
     $.ajax({
@@ -33,7 +33,7 @@ function getTdId(row){
 
 //crear botones modal
 function createDeleteModal(){
-    var idreport =  $("#idEdit").val()
+    let idreport =  $("#idEdit").val()
 
     modalBtn.innerHTML=''; //limpiamos los botones del modal
 
@@ -104,14 +104,14 @@ function empOptions(data, actualEmp){
 
 //recoge los datos del modal y actualiza los datos del repot.
 function saveReportsChanges(){
-    var id = $("#idEdit").val();
+    let id = $("#idEdit").val();
 
     let emp= $("#selectEmployeesEdit").val();
     let exp = new RegExp("[0-9]+");
     let result = emp.match(exp);
     let idEmployee = result[0];
 
-    var formData = JSON.stringify([
+    let formData = JSON.stringify([
         {
             "op":"replace",
             "path":"/startDate",
@@ -188,7 +188,7 @@ function saveReportsChanges(){
 
 //Eliminar un parte
 function deleteYes(id){
-    var deleteId = id
+    let deleteId = id
 console.log(deleteId)
     $.ajax({
         type:"DELETE",

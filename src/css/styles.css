@@ -10,6 +10,10 @@
     }
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
 /*Botón UP*/
 #back-to-top {
@@ -18,6 +22,8 @@
   right: 25px;
   display: none;
 }
+
+/*Log in*/
 .forgot-password{
   color: gray;
 }
@@ -35,6 +41,34 @@
   background-attachment: fixed;
   background-size: cover;
 }
+/*End log in*/
+
+
+/*NAV*/
+ul>li {
+  display: inline-block;
+  padding: 0 0 0 5px;
+  margin-left: -4px;
+}
+
+.navbar-nav .nav-link {
+  font-weight:bold;
+}
+
+.nav-item a:hover {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  border-bottom: 3px solid rgb(43, 51, 172);
+}
+
+.nav-item a.active {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  border-bottom: 3px solid rgb(4, 0, 255);
+}
+/*End Nav*/
 
 
   
