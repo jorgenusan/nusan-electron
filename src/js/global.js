@@ -1,4 +1,4 @@
-$('#navbar').load('../components/navbar.html')
+window.onload = nav();
 
 // Botón scroll up
 $(document).ready(function(){
@@ -24,7 +24,25 @@ function convertDateFormat(string) {
     return info;
 }
 
-$( '#topheader .navbar-nav a' ).on( 'click', function () {
-	$( '#topheader .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
-	$( this ).parent( 'li' ).addClass( 'active' );
-});
+
+function nav(){
+
+	let userString = sessionStorage.getItem('user');
+	let user = JSON.parse(userString);
+
+	navUser.innerHTML += `
+	<li class="nav-item" >
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+				${user.name} ${user.lastName}
+			</button>
+			<ul class="dropdown-menu dropdown-menu-end">
+				<li><button class="dropdown-item" type="button">Perfil</button></li>
+				<li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar sesión</button></li>
+			</ul>
+		</div>
+	</li>
+	`;
+}
+
+

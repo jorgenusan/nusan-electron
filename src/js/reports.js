@@ -54,7 +54,7 @@ function tabla(data){
                             ${valor.brand}
                             <br>
                             <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
-                            ${valor.dateApointment}
+                            Cita: ${valor.dateApointment}
                         </p>
                     </div>
                     <div class="col-md-4 col-lg mb-4">
