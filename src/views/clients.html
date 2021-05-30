@@ -71,13 +71,49 @@
   <div class="container">
     <h1 class="text-primary text-center">Clientes</h1>
     <hr class="bg-primary">
-    <div class="mt-3 mb-3">
-      <a href="newClient.html">
-        <button class="btn btn-light border">
-          Nuevo Cliente
-          <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
-        </button>
-      </a>
+    
+     <!-- order and search -->
+     <div class="">
+      <div class="form-row row mb-2">
+        <div class="input-group col-sm col-md">
+          <a href="newClient.html">
+            <button class="btn btn-light border">
+              Nuevo Cliente
+            <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
+            </button>
+          </a>
+        </div>
+        <div class="input-group col-sm col-md" id="groupBySelect">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+            </a>
+          </div>
+          <select class="form-select" aria-label="Default select example" id="orderBySelect" onchange="clients()">
+            <option value="1">ID</option>
+            <option value="2">Nombre</option>
+            <option value="3">Apellidos</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row row mb-2">
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search1" placeholder="Nombre" onkeyup="searchFunction1()">
+        </div>
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search2" placeholder="DNI" onkeyup="searchFunction2()">
+        </div>
+      </div>     
     </div>
 
     <div class="row" id="contenido">

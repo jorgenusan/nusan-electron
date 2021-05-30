@@ -2,10 +2,21 @@ window.onload = clients();
 
 function clients(){
 
+    let orderBySelect = document.getElementById("orderBySelect");
+    let orderSelected = orderBySelect.value
+    let sortBy = "id";
+    if(orderSelected == 1){
+        sortBy = "id";
+    }else if(orderSelected == 2){
+        sortBy = "name";
+    } else {
+        sortBy = "lastName";
+    }
+
     var getCli = JSON.stringify({
         "numPage": 0,
         "sizePage": 20,
-        "sortBy": "id",
+        "sortBy": sortBy,
         "ascending": true
     });
 
@@ -25,11 +36,12 @@ function clients(){
 
 
 function card(data){
+    let x = 0;
     contenido.innerHTML='';
     for(let valor of data){
 
         contenido.innerHTML += ` 
-        <div class="col-sm-4 mb-4">
+        <div class="col-sm-4 mb-4" id="card${x}">
             <div class="card">
                 <div class="card-header">
                     <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg">
@@ -67,6 +79,8 @@ function card(data){
                 </div>
             </div>
         </div>`
+
+        x = x+1;
     }  
 }
 
@@ -192,8 +206,6 @@ function saveChanges(){
 }
 
 
-
-
 function deleteClient(dni){
     var deleteDni = dni;
 
@@ -208,4 +220,51 @@ function deleteClient(dni){
         alert("Error al eliminar el cliente.", error);
     })
 
+}
+
+function searchFunction1(){
+
+    //variables
+    let input = document.getElementById("search1");
+    let filter = input.value.toUpperCase();
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/6
+    
+    for(let i = 0; i<cardLength;i++){
+
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[1].textContent;
+
+        if(p.toUpperCase().includes(filter)==true){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+            
+        }
+    }
+}
+
+function searchFunction2(){
+
+    //variables
+    let input = document.getElementById("search2");
+    let filter = input.value.toUpperCase();
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/6
+    
+    for(let i = 0; i<cardLength;i++){
+
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[0].getElementsByTagName("p");
+        let pText = p[2].textContent;
+
+        if(pText.toUpperCase().includes(filter)==true){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+            
+        }
+    }
 }
