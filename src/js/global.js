@@ -37,7 +37,7 @@ function nav(){
 				${user.name} ${user.lastName}
 			</button>
 			<ul class="dropdown-menu dropdown-menu-end">
-				<li><button class="dropdown-item" type="button">Perfil</button></li>
+				<li><a href="personalData.html" class="text-decoration-none"><button class="dropdown-item" type="button">Perfil</button></a></li>
 				<li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cerrar sesión</button></li>
 			</ul>
 		</div>

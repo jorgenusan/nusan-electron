@@ -169,7 +169,6 @@ function saveReportsChanges(){
         }
     ]);
 
-    console.log(formData);
     $.ajax({
         type:"PATCH",
         url: "http://localhost:8080/report/"+id,
