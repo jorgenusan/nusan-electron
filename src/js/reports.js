@@ -1,10 +1,29 @@
 window.onload = getData();
+
+
 function getData(){
+
+    let orderBySelect = document.getElementById("orderBySelect");
+    let orderSelected = orderBySelect.value
+    let sortBy = "id";
+    if(orderSelected == 1){
+        sortBy = "id";
+    }else if(orderSelected == 2){
+        sortBy = "state";
+    } else if(orderSelected == 3){
+        sortBy = "priority";
+    }else if(orderSelected == 4){
+        sortBy = "startDate";
+    }else if(orderSelected == 5){
+        sortBy = "endingDate";
+    }else{
+        sortBy = "dateApointment";
+    }
         
     var getReports = JSON.stringify({
         "numPage": 0,
         "sizePage": 20,
-        "sortBy": "id",
+        "sortBy": sortBy,
         "ascending": true
     });
 
@@ -23,6 +42,7 @@ function getData(){
 
 function tabla(data){
     contenido.innerHTML='';
+    let x = 0;
     for(let valor of data){
         if(valor.endingDate == null){
             valor.endingDate = "Sin fecha";
@@ -31,7 +51,7 @@ function tabla(data){
             valor.dateApointment = "Sin fecha";
         }
         contenido.innerHTML+=`
-            <div class="card">
+            <div class="card" id="card${x}">
                 <div class="row card-body">
                     <div class="col-md-4 col-lg mb-4">
                         <p class="card-text">
@@ -86,30 +106,103 @@ function tabla(data){
                     </div>
                 </div>
             </div>`
+            x=x+1;
     }
 } 
 
-//mirar cómo ocultar las cards
-function searchFunction(){
+function searchFunction1(){
 
     //variables
-    let input = document.getElementById("searchState");
+    let input = document.getElementById("search1");
     let filter = input.value.toUpperCase();
-    let card = document.getElementById("contenido");
-    let div = card.getElementsByTagName("div"); 
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/7
+    
+    for(let i = 0; i<cardLength;i++){
 
-    for(let i = 0; i<5;i++){
-
-        let p = div[i].getElementsByTagName("p");
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[0].getElementsByTagName("p");
         let pText = p[0].textContent;
-        //console.log(pText)
 
         if(pText.toUpperCase().includes(filter)==true){
-            
+            card.style.display = "";
         }else{
-            card.getElementsByTagName("div")[i].hide();
+            card.style.display = "none";
+            
         }
     }
+}
 
+function searchFunction2(){
+
+    //variables
+    let input = document.getElementById("search2");
+    let filter = input.value.toUpperCase();
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/7
+    
+    for(let i = 0; i<cardLength;i++){
+
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[0].getElementsByTagName("p");
+        let pText = p[1].textContent;
+
+        if(pText.toUpperCase().includes(filter)==true){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+            
+        }
+    }
+}
+
+function searchFunction3(){
+
+    //variables
+    let input = document.getElementById("search3");
+    let filter = input.value.toUpperCase();
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/7
+    
+    for(let i = 0; i<cardLength;i++){
+
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[0].getElementsByTagName("p");
+        let pText = p[2].textContent;
+
+        if(pText.toUpperCase().includes(filter)==true){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+            
+        }
+    }
+}
+
+function searchFunction4(){
+
+    //variables
+    let input = document.getElementById("search4");
+    let filter = input.value.toUpperCase();
+    let cards = $("#contenido div");
+    let cardLength = (cards.length)/7
+    
+    for(let i = 0; i<cardLength;i++){
+
+        let card = document.getElementById("card"+(i));
+        let div = card.getElementsByTagName("div"); 
+        let p = div[0].getElementsByTagName("p");
+        let pText = p[3].textContent;
+
+        if(pText.toUpperCase().includes(filter)==true){
+            card.style.display = "";
+        }else{
+            card.style.display = "none";
+            
+        }
+    }
 }
 

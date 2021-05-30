@@ -68,12 +68,12 @@
     </div>
 
     <!-- Container -->
-    <div class="shadow container">
+    <div class="container pb-3 pt-3">
       <h1 class="text-center text-primary">Partes</h1>
       <hr class="bg-primary">
       
 
-      <div>
+      <div class="">
         <div class="form-row row mb-2">
           <div class="input-group col-sm col-md">
             <a href="reportForm.html">
@@ -89,8 +89,7 @@
                 <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
               </a>
             </div>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Ordenar por...</option>
+            <select class="form-select" aria-label="Default select example" id="orderBySelect" onchange="getData()">
               <option value="1">ID</option>
               <option value="2">Estado</option>
               <option value="3">Prioridad</option>
@@ -98,9 +97,6 @@
               <option value="5">Fecha fin</option>
               <option value="6">Fecha cita</option>
             </select>
-            <div class="input-group-addon">
-              <button class="btn btn-primary" id="orderBtn">Ordenar</button>
-            </div>
           </div>
         </div>
         <div class="form-row row mb-2">
@@ -110,14 +106,39 @@
                 <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
               </a>
             </div>
-            <input type="state" class="form-control" id="searchState" placeholder="Búsqueda por Estado" >
-            <button class="btn" onclick="searchFunction()">click</button>
+            <input type="state" class="form-control" id="search1" placeholder="Nº, Estado y Prioridad" onkeyup="searchFunction1()">
+          </div>
+          <div class="input-group col-sm col-md">
+            <div class="input-group-addon">
+              <a class="btn border">
+                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+              </a>
+            </div>
+            <input type="state" class="form-control" id="search2" placeholder="Equipo, Marca y Cita" onkeyup="searchFunction2()">
+          </div>
+        </div>
+        <div class="form-row row mb-2">
+          <div class="input-group col-sm col-md">
+            <div class="input-group-addon">
+              <a class="btn border">
+                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+              </a>
+            </div>
+            <input type="state" class="form-control" id="search3" placeholder="Cliente, Teléfono y Email" onkeyup="searchFunction3()">
+          </div>
+          <div class="input-group col-sm col-md">
+            <div class="input-group-addon">
+              <a class="btn border">
+                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+              </a>
+            </div>
+            <input type="state" class="form-control" id="search4" placeholder="Empleado, Inicio y Fin" onkeyup="searchFunction4()">
           </div>
         </div>
         
       </div>
 
-      <div id="contenido">
+      <div class="" id="contenido">
         <!--js-->
       </div>
 
