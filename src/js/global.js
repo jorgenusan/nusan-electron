@@ -45,4 +45,9 @@ function nav(){
 	`;
 }
 
+function leanLogOut(){
+	sessionStorage.setItem('user', '')
+	window.location.replace("./login.html");
+}
+
 
