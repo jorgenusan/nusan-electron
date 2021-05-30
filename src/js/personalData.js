@@ -153,6 +153,8 @@ function disableAccount(){
     document.getElementById("inputOldPass").disabled = true;
     document.getElementById("inputNewPass").disabled = true;
     document.getElementById("inputRepeatPass").disabled = true;
+
+    location.reload();
 }
 function disablePersonal(){
     let btn = document.getElementById("editpersonal");
@@ -163,6 +165,8 @@ function disablePersonal(){
     document.getElementById("inputLastName").disabled = true;
     document.getElementById("inputNumber").disabled = true;
     document.getElementById("inputDni").disabled = true;
+
+    location.reload();
 }
 function enableAccount(){
     let btn = document.getElementById("editAccount");
