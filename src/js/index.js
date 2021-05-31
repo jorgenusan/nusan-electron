@@ -109,10 +109,10 @@ function tableReportOpen(data, content){
                     <div class="col-md-4 col-lg mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/tv-fill.svg" alt="">
-                            ${valor.machine}
+                            Aparato: ${valor.machine}
                             <br>
                             <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
-                            ${valor.brand}
+                            Marca: ${valor.brand}
                             <br>
                             <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
                             Cita: ${valor.dateApointment}
