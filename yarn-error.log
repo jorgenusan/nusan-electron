@@ -1,0 +1,49 @@
+Arguments: 
+  D:\Program Files (x86)\nodejs\node.exe C:\Users\jorge\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add electron-builder --dev
+
+PATH: 
+  C:\Users\jorge\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jorge\bin;C:\Python39\Scripts;C:\Python39;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;D:\Program Files (x86)\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\Git LFS;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\jorge\AppData\Local\Microsoft\WindowsApps;D:\Program Files\VSCode\Microsoft VS Code\bin;C:\Users\jorge\AppData\Roaming\npm;C:\Users\jorge\.dotnet\tools;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  win32 ia32
+
+Trace: 
+  Error: EBUSY: resource busy or locked, unlink 'D:\workspace\electron-app\node_modules\electron\dist\v8_context_snapshot.bin'
+
+npm manifest: 
+  {
+    "name": "electron-app",
+    "version": "1.0.0",
+    "author": "Jorge Núñez Santiago",
+    "description": "My electron app",
+    "main": "src/main.js",
+    "scripts": {
+      "start": "electron ."
+    },
+    "keywords": [],
+    "license": "ISC",
+    "devDependencies": {
+      "electron": "^12.0.2"
+    },
+    "dependencies": {
+      "@popperjs/core": "^2.9.2",
+      "bootstrap": "^5.0.0-beta3",
+      "bootstrap-icons": "^1.4.1",
+      "electron-browser-storage": "^1.0.7",
+      "electron-reload": "^1.5.0",
+      "electron-store": "^8.0.0",
+      "jquery": "^3.6.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
