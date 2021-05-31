@@ -33,7 +33,7 @@ function nav(){
 	navUser.innerHTML += `
 	<li class="nav-item" >
 		<div class="btn-group">
-			<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 				${user.name} ${user.lastName}
 			</button>
 			<ul class="dropdown-menu dropdown-menu-end">

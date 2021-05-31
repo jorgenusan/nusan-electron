@@ -94,9 +94,9 @@
                 <label for="inputRepeatPass" class="form-label">Repetir contraseña</label>
                 <input type="password" class="form-control" id="inputRepeatPass" disabled>
               </div>
-              <div class="col-12 mb-5">
-                <a class="btn btn-primary" onclick="enableAccount()" id="editAccount">Editar</a>
-                <a class="btn btn-primary" onclick="changeAccountData()">Guardar</a>
+              <div class="col-12 mb-5 d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-outline-secondary" onclick="enableAccount()" id="editAccount">Editar</a>
+                <a class="btn btn-outline-primary" onclick="changeAccountData()">Guardar</a>
               </div> 
             <hr>
             <h4>Datos Personales</h4>
@@ -116,9 +116,9 @@
                 <label for="inputDni" class="form-label">DNI</label>
                 <input type="text" class="form-control" id="inputDni" disabled>
               </div>
-            <div class="col-12">
-                <a class="btn btn-primary" onclick="enablePersonal()" id="editpersonal">Editar</a>
-              <a class="btn btn-primary" onclick="changePersonalData()">Guardar cambios</a>
+            <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-outline-warning" onclick="enablePersonal()" id="editpersonal">Editar</a>
+              <a class="btn btn-outline-primary" onclick="changePersonalData()">Guardar cambios</a>
             </div>          
           </form>
     </div>

@@ -41,7 +41,7 @@ function createDeleteModal(){
     modalBtn.innerHTML +=
     `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick="(${idreport})">Sí</button>
+    <button type="button" class="btn btn-primary" onclick="deleteYes(${idreport})">Sí</button>
     `
     //mostramos modal
     $('#deleteModal').modal('show');

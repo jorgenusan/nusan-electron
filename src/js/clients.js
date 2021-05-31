@@ -70,11 +70,8 @@ function card(data){
                     </p>
                 </div>
                 <div class="card-footer text-muted">
-                    <button type="button" class="btn btn-primary" id="btnEditModal">
+                    <button type="button" class="btn btn-outline-primary" id="btnEditModal">
                         Editar
-                    </button>
-                    <button type="button" class="btn btn-primary" id="btnDeleteModal">
-                        Eliminar
                     </button>
                 </div>
             </div>
@@ -97,20 +94,11 @@ $("#contenido").on("click", function(evt) {
         
     }
 
-    //Si se pulsa eliminar
-    if(btn.tagName==="BUTTON" && btn.id === "btnDeleteModal"){
-        var card = btn.parentNode.parentNode;
-        var container = card.getElementsByTagName("div"); //cells
-        var div = container[1].getElementsByTagName("p");
-        var dni = div[2].textContent;
-        btnDeleteClientModal(dni.trim());
-    }
-
 });
 
 //crear botones modal
-function btnDeleteClientModal(data){
-    var dni = data;
+function btnDeleteClientModal(){
+    var dni = $("#inputDni").val();
 
     deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
 

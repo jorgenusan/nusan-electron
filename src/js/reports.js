@@ -102,7 +102,7 @@ function tabla(data){
                         </p>
                     </div>
                     <div class="col-md-2 col-lg-1 row text-center">
-                        <button type="button" class="btn btn-primary" id="btnEditModal">Editar</button>
+                        <button type="button" class="btn btn-outline-primary" id="btnEditModal">Editar</button>
                     </div>
                 </div>
             </div>`
