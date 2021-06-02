@@ -29,8 +29,8 @@ $(document).ready(function(){
           event.preventDefault();
 
         function loadLocalStorage(data){
-            var remember = $("exampleCheck1");
-            if(remember.is(':checked')){
+            var remember = document.getElementById("exampleCheck1").checked;
+            if(remember){
                 localStorage.setItem('login', JSON.stringify(data));
             }else{
                 localStorage.removeItem('login');
