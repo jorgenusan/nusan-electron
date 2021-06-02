@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+var bcrypt = require('bcryptjs');
 require('electron-reload')(__dirname);
 
 function createWindow () {

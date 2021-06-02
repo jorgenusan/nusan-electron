@@ -2,11 +2,15 @@ window.onload = userReports()
 
 function userReports(){
 
-    var userContent = myTabContent.getElementsByTagName("div");
+    let userS = sessionStorage.getItem('user');
+    let user = JSON.parse(userS);
+    let id = user.id;
+
+    let userContent = myTabContent.getElementsByTagName("div");
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080//reportFilter/8/field/3"
+        url: "http://localhost:8080//reportFilter/"+id+"/field/3"
     }).done(function(data){
         tableReportOpen(data, userContent[0]) ;
     }).fail(function(error){
@@ -19,15 +23,15 @@ $(function(){
     $('#today-tab').on('click', function(e){
         
         const date = new Date();
-        var today = date.toISOString();
-        var dateFormat = today.match(/^\d{4}\-\d{2}\-\d{2}/)
+        let today = date.toISOString();
+        let dateFormat = today.match(/^\d{4}\-\d{2}\-\d{2}/)
         
         todayReports(dateFormat[0]);
         
     });
 
     $('#open-tab').on('click', function(e){
-        var openContent = document.getElementById("open");
+        let openContent = document.getElementById("open");
 
         $.ajax({
             type:"GET",
@@ -44,9 +48,9 @@ $(function(){
 })
 
 function todayReports(formatDate){
-    var today = formatDate
+    let today = formatDate
 
-    var todayContent = document.getElementById("today");
+    let todayContent = document.getElementById("today");
 
     $.ajax({
         type:"GET",
@@ -64,7 +68,7 @@ function todayReports(formatDate){
 function tableReportOpen(data, content){
     //TODO no funciona
     
-    var contenido = content;
+    let contenido = content;
 
     if(data.length == 0){
         contenido.innerHTML=`
@@ -94,7 +98,7 @@ function tableReportOpen(data, content){
             contenido.innerHTML+=`
                 <div class="card">
                 <div class="row card-body">
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/clipboard.svg">
                             Nº: ${valor.id}
@@ -106,7 +110,7 @@ function tableReportOpen(data, content){
                             Prioridad: ${valor.priority}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/tv-fill.svg" alt="">
                             Aparato: ${valor.machine}
@@ -118,7 +122,7 @@ function tableReportOpen(data, content){
                             Cita: ${valor.dateApointment}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
                             ${valor.client.name} ${valor.client.lastName}
@@ -130,7 +134,7 @@ function tableReportOpen(data, content){
                             ${valor.client.email}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">  
                             ${valor.employees.name} ${valor.employees.lastName}
@@ -142,7 +146,7 @@ function tableReportOpen(data, content){
                             Fin: ${valor.endingDate}
                         </p>
                     </div>
-                    <div class="col-md-2 col-lg-1 row text-center">
+                    <div class="col-md-2 col-lg-2 col-xl-1 row text-center">
                         <button type="button" class="btn btn-outline-primary" id="btnEditModal">Editar</button>
                     </div>
                 </div>

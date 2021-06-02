@@ -53,7 +53,7 @@ function tabla(data){
         contenido.innerHTML+=`
             <div class="card" id="card${x}">
                 <div class="row card-body">
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/clipboard.svg">
                             Nº: ${valor.id}
@@ -65,7 +65,7 @@ function tabla(data){
                             Prioridad: ${valor.priority}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/tv-fill.svg" alt="">
                             ${valor.machine}
@@ -77,7 +77,7 @@ function tabla(data){
                             Cita: ${valor.dateApointment}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
                             ${valor.client.name} ${valor.client.lastName}
@@ -89,7 +89,7 @@ function tabla(data){
                             ${valor.client.email}
                         </p>
                     </div>
-                    <div class="col-md-4 col-lg mb-4">
+                    <div class="col-md-4 col-lg-3 col-xl mb-4">
                         <p class="card-text">
                             <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">  
                             ${valor.employees.name} ${valor.employees.lastName}
@@ -101,7 +101,7 @@ function tabla(data){
                             Fin: ${valor.endingDate}
                         </p>
                     </div>
-                    <div class="col-md-2 col-lg-1 row text-center">
+                    <div class="col-md-2 col-lg-2 col-xl-1 row text-center">
                         <button type="button" class="btn btn-outline-primary" id="btnEditModal">Editar</button>
                     </div>
                 </div>

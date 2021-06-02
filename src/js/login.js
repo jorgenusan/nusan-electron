@@ -3,7 +3,6 @@ $(document).ready(function(){
     if(localStorage.getItem('login')!=null){
         let loginString = localStorage.getItem('login');
         let login = JSON.parse(loginString);
-        console.log(login)
         $("#InputEmail").val(login.email);
         $("#InputPassword").val(login.password);
         $("#exampleCheck1").prop('checked', true);
@@ -30,9 +29,11 @@ $(document).ready(function(){
           event.preventDefault();
 
         function loadLocalStorage(data){
-            var remember = document.getElementById("exampleCheck1");
-            if(remember){
-                localStorage.setItem('login', JSON.stringify(data))
+            var remember = $("exampleCheck1");
+            if(remember.is(':checked')){
+                localStorage.setItem('login', JSON.stringify(data));
+            }else{
+                localStorage.removeItem('login');
             }
         }
 
