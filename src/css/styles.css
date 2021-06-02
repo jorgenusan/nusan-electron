@@ -59,14 +59,14 @@ ul>li {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  border-bottom: 3px solid rgb(43, 51, 172);
+  border-bottom: 3px solid rgb(30, 198, 218);
 }
 
 .nav-item a.active {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  border-bottom: 3px solid rgb(4, 0, 255);
+  border-bottom: 3px solid rgb(30, 198, 218);
 }
 /*End Nav*/
 
