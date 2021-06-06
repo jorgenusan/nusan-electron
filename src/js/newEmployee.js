@@ -21,10 +21,10 @@ $(document).ready(function(){
                 data: formData,
                 contentType: "application/json"
             }).done(function(data){
-                alert("El empleado ha sido creado correctamente.");
+                $('#successToast').toast('show');
                 clean();
             }).fail(function(error){
-                alert("Error al crear el empleado.")
+                $('#dangerToast').toast('show');
             })
         }else{
             alert("Las contraseñas no coindicen.");

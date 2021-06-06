@@ -17,7 +17,7 @@ function clients(){
     }).done(function(data){
         cliOptions(data);
     }).fail(function(error){
-        alert("Error al obtener los datos de la tabla.", error);
+        selectClients.innerHTML += `<option>Error al obtener los clientes.</option>`;
     })
 
 }
@@ -50,7 +50,7 @@ function employees(){
     }).done(function(data){
         empOptions(data);
     }).fail(function(error){
-        alert("Error al obtener los datos de la tabla.", error);
+        selectEmployees.innerHTML=`<option>Error al obtener los empleados.</option>`;
     })
 
 }
@@ -102,9 +102,9 @@ function createNewClient(){
     }).done(function(data){
         let idClient = data.id;
         createNewReport(idClient);
-        console.log("cliente creado");
+        $('#successToastCli').toast('show');
     }).fail(function(error){
-        alert("Error al crear el cliente.")
+        $('#dangerToastCli').toast('show');
     })
 
 }
@@ -141,11 +141,10 @@ function createNewReport(idClient){
         data: formData,
         contentType: "application/json"
     }).done(function(data){
-        alert("El parte ha sido creado.");
-        console.log("parte creado");
+        $('#successToast').toast('show');
         clear();
     }).fail(function(error){
-        alert("Error al crear el parte.")
+        $('#dangerToast').toast('show');
     })
 
 

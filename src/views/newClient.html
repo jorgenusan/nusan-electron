@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Nusan Software</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
 </head>
+
 <body>
   <!--Load the navbar-->
-   <div id="navbar">
+  <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8f2fa">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><img src="../img/LogoCompleto100.png"></a>
@@ -65,94 +70,139 @@
     <div class="pb-5">
       <h2 class="visually-hidden">hidden</h2>
     </div>
-   </div>
+  </div>
 
-    <!-- Container -->
-    <div class="container mb-5">
+  <!-- Container -->
+  <div class="container mb-5">
 
-      <h1 class="text-center text-primary">Nuevo Cliente</h1>
-      <hr class="bg-primary">
+    <h1 class="text-center text-primary">Nuevo Cliente</h1>
+    <hr class="bg-primary">
 
-      <!--Form Report-->
-      <form class="needs-validation pt-3" novalidate>
+    <!--Form Report-->
+    <form class="needs-validation pt-3" novalidate>
 
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputName">
-              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
-              Nombre
-            </label>
-            <input type="text" class="form-control" id="inputName">
-          </div>
-          <div class="form-group col-sm">
-            <label for="inputLastName">
-              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
-              Apellidos
-            </label>
-            <input type="text" class="form-control" id="inputLastName">
-          </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputName">
+            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+            Nombre
+          </label>
+          <input type="text" class="form-control" id="inputName">
         </div>
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputEmail">
-              <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
-              Email
-            </label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputDni">
-              <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
-              DNI
-            </label>
-            <input type="text" class="form-control" id="inputDni">
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputTel">
-              <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
-              Teléfono
-            </label>
-            <input type="tel" class="form-control" id="inputTel">
-          </div>
+        <div class="form-group col-sm">
+          <label for="inputLastName">
+            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+            Apellidos
+          </label>
+          <input type="text" class="form-control" id="inputLastName">
         </div>
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputAddress">
-              <img src="../../node_modules/bootstrap-icons/icons/house-fill.svg" alt="">
-              Dirección
-            </label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputCity">
-              <img src="../../node_modules/bootstrap-icons/icons/geo-alt-fill.svg" alt="">
-              Ciudad
-            </label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputEmail">
+            <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
+            Email
+          </label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
         </div>
-        <div class="row justify-content-between">
-          <a href="../views/employees.html" class="btn btn-outline-secondary mt-3 col-md-2 col-lg-1">
-            <img src="../../node_modules/bootstrap-icons/icons/arrow-left.svg">
-              Volver
-          </a>
-          <button type="submit" class="btn btn-outline-primary mt-3 col-md-2 col-lg-1">Guardar</button>
+        <div class="form-group col-sm mb-2">
+          <label for="inputDni">
+            <img src="../../node_modules/bootstrap-icons/icons/credit-card-2-front-fill.svg">
+            DNI
+          </label>
+          <input type="text" class="form-control" id="inputDni">
         </div>
-      </form>
-      <!--Form final-->
+        <div class="form-group col-sm mb-2">
+          <label for="inputTel">
+            <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
+            Teléfono
+          </label>
+          <input type="tel" class="form-control" id="inputTel">
+        </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputAddress">
+            <img src="../../node_modules/bootstrap-icons/icons/house-fill.svg" alt="">
+            Dirección
+          </label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group col-sm mb-2">
+          <label for="inputCity">
+            <img src="../../node_modules/bootstrap-icons/icons/geo-alt-fill.svg" alt="">
+            Ciudad
+          </label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+      </div>
+      <div class="row justify-content-between">
+        <a href="../views/employees.html" class="btn btn-outline-secondary mt-3 col-md-2 col-lg-1">
+          <img src="../../node_modules/bootstrap-icons/icons/arrow-left.svg">
+          Volver
+        </a>
+        <button type="submit" class="btn btn-outline-primary mt-3 col-md-2 col-lg-1">Guardar</button>
+      </div>
+    </form>
+    <!--Form final-->
+  </div>
+  <!-- /.Container -->
+
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+  </a>
+
+  <!--Toast éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="successToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Nuevo Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El cliente ha sido creado con éxito!
+      </div>
     </div>
-    <!-- /.Container -->
+  </div>
 
-    <!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
+  <!--Toast fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="dangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Nuevo Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al crear el cliente!
+      </div>
+    </div>
+  </div>
 
-      <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../js/global.js"></script>
-      <script src="../js/newClient.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../js/global.js"></script>
+  <script src="../js/newClient.js"></script>
 
 </body>
+
 </html>

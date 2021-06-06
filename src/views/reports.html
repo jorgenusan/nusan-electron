@@ -1,334 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Nusan Software</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
 </head>
+
 <body>
   <!--Load the navbar-->
-    <div id="navbar">
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8f2fa">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"><img src="../img/LogoCompleto100.png"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" style="color: #5a297e;" aria-current="page" href="reports.html">Partes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="reportForm.html">Nuevo Parte</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="clients.html">Clientes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="employees.html">Empleados</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right" id="navUser">
-              <!--Load with JS-->
-            </ul>
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-              aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Confirmar acción</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ¿Estás seguro de cerrar la sesión?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary" onclick="leanLogOut()">Sí</button>
-                  </div>
+  <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8f2fa">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="../img/LogoCompleto100.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" style="color: #5a297e;" aria-current="page" href="reports.html">Partes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="reportForm.html">Nuevo Parte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="clients.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="employees.html">Empleados</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" id="navUser">
+            <!--Load with JS-->
+          </ul>
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Confirmar acción</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ¿Estás seguro de cerrar la sesión?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <button type="button" class="btn btn-primary" onclick="leanLogOut()">Sí</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-  
-      <div class="pb-5">
-        <h2 class="visually-hidden">hidden</h2>
       </div>
-    </div>
+    </nav>
 
-    <!-- Container -->
-    <div class="container pb-3">
-      <h1 class="text-center text-primary">Partes</h1>
-      <hr class="bg-primary">
-      
-      <!-- order and search -->
-      <div class="">
-        <div class="form-row row mb-2">
-          <div class="input-group col-sm col-md">
-            <a href="reportForm.html">
-              <button class="btn btn-outline-secondary">
-                Nuevo Parte
-              <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
-              </button>
-            </a>
-          </div>
-          <div class="input-group col-sm col-md" id="groupBySelect">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
-              </a>
-            </div>
-            <select class="form-select" aria-label="Default select example" id="orderBySelect" onchange="getData()">
-              <option value="" selected>Ordenar...</option>
-              <option value="1">ID</option>
-              <option value="2">Estado</option>
-              <option value="3">Prioridad</option>
-              <option value="4">Fecha inicio</option>
-              <option value="5">Fecha fin</option>
-              <option value="6">Fecha cita</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row row mb-2">
-          <div class="input-group col-sm col-md">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
-              </a>
-            </div>
-            <input type="state" class="form-control" id="search1" placeholder="Nº, Estado y Prioridad" onkeyup="searchFunction1()">
-          </div>
-          <div class="input-group col-sm col-md">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
-              </a>
-            </div>
-            <input type="state" class="form-control" id="search2" placeholder="Equipo, Marca y Cita" onkeyup="searchFunction2()">
-          </div>
-        </div>
-        <div class="form-row row mb-2">
-          <div class="input-group col-sm col-md">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
-              </a>
-            </div>
-            <input type="state" class="form-control" id="search3" placeholder="Cliente, Teléfono y Email" onkeyup="searchFunction3()">
-          </div>
-          <div class="input-group col-sm col-md">
-            <div class="input-group-addon">
-              <a class="btn border">
-                <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
-              </a>
-            </div>
-            <input type="state" class="form-control" id="search4" placeholder="Empleado, Inicio y Fin" onkeyup="searchFunction4()">
-          </div>
-        </div>
-        
-      </div>
-
-      <div class="" id="contenido">
-        <!--js-->
-      </div>
-
-    <!-- Modal -->
-<div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Parte</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="mb-4">
-          <h3>
-            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg" alt="" width="32">
-            Parte
-          </h3>
-          <hr>
-          <div class="form-row row ">
-            <div class="form-group col-sm mb-2">
-              <label for="brandEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
-                ID
-              </label>
-              <input type="text" class="form-control" id="idEdit" disabled="disabled">
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="dateStartEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg" >
-                Fecha parte
-              </label>
-              <input type="date" class="form-control" id="dateStartEdit" value="" required>
-            </div>
-          </div>
-          <div class="form-row row ">
-            <div class="form-group col-sm mb-2">
-              <label for="dateApointmentEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
-                Fecha cita
-              </label>
-              <input type="date" class="form-control" id="dateApointmentEdit">
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="dateEndEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg" >
-                Fecha fin
-              </label>
-              <input type="date" class="form-control" id="dateEndEdit">
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-sm mb-2">
-              <label for="priorityEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/bar-chart-fill.svg">
-                Prioridad
-              </label>
-              <select class="form-select" aria-label="Default select example" id="priorityEdit">
-                <option selected>Sin definir</option>
-                <option value="1">Alta</option>
-                <option value="2">Media</option>
-                <option value="3">Baja</option>
-              </select>
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="stateEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
-                Estado *
-            </label>
-              <select class="form-select" id="stateEdit" required>
-                <option value="1">Abierto</option>
-                <option value="2">Pendiente</option>
-                <option value="3">Cerrado</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-sm mb-2">
-              <label for="machineEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/tv.svg" alt="">
-                Aparato
-              </label>
-              <input type="text" class="form-control" id="machineEdit">
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="brandEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
-                Marca
-              </label>
-              <input type="text" class="form-control" id="brandEdit">
-            </div>
-          </div>
-          <div class="form-row row">
-            <div class="form-group col-sm mb-2">
-              <label for="paymentEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/cash-stack.svg" alt="">
-                Pago
-              </label>
-              <input type="number" class="form-control" id="paymentEdit">
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="paymentMethodEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/wallet2.svg" alt="">
-                Método de pago
-              </label>
-              <select class="form-select" id="paymentMethodEdit" required>
-                <option value="1">Seleccionar método</option>
-                <option value="2">Efectivo</option>
-                <option value="3">Tarjeta</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group mb-2">
-            <label for="textareaEdit">
-              <img src="../../node_modules/bootstrap-icons/icons/fonts.svg" alt="">
-              Observaciones
-            </label>
-            <textarea class="form-control" id="textareaEdit" rows="3"></textarea>
-          </div>
-          
-          <!-- Asignación -->
-          <h3 class="mt-5">
-            <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="" width="32">
-            Asignación
-          </h3>
-          <hr>
-          <div class="form-row row">
-            <div class="form-group col-sm mb-2">
-              <label for="selectClientsEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
-                Cliente
-              </label>
-              <input type="text" class="form-control" id="selectClientsEdit" disabled="disabled">
-            </div>
-            <div class="form-group col-sm mb-2">
-              <label for="selectEmployeesEdit">
-                <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">  
-                Empleado
-              </label>
-              <select class="form-select" id="selectEmployeesEdit">
-                
-              </select>
-            </div>
-          </div>
-            
-        </form>
-      </div>
-      <div class="modal-footer justify-content-between">
-        <a onclick="createDeleteModal()" class="btn btn-outline-danger">Eliminar</a>
-        <div>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-outline-primary" onclick="saveReportsChanges()">Guardar cambios</button>
-        </div>
-      </div>
+    <div class="pb-5">
+      <h2 class="visually-hidden">hidden</h2>
     </div>
   </div>
-</div>
+
+  <!-- Container -->
+  <div class="container pb-3">
+    <h1 class="text-center text-primary">Partes</h1>
+    <hr class="bg-primary">
+
+    <!-- order and search -->
+    <div class="">
+      <div class="form-row row mb-2">
+        <div class="input-group col-sm col-md">
+          <a href="reportForm.html">
+            <button class="btn btn-outline-secondary">
+              Nuevo Parte
+              <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
+            </button>
+          </a>
+        </div>
+        <div class="input-group col-sm col-md" id="groupBySelect">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+            </a>
+          </div>
+          <select class="form-select" aria-label="Default select example" id="orderBySelect" onchange="getData()">
+            <option value="" selected>Ordenar...</option>
+            <option value="1">ID</option>
+            <option value="2">Estado</option>
+            <option value="3">Prioridad</option>
+            <option value="4">Fecha inicio</option>
+            <option value="5">Fecha fin</option>
+            <option value="6">Fecha cita</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row row mb-2">
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search1" placeholder="Nº, Estado y Prioridad"
+            onkeyup="searchFunction1()">
+        </div>
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search2" placeholder="Equipo, Marca y Cita"
+            onkeyup="searchFunction2()">
+        </div>
+      </div>
+      <div class="form-row row mb-2">
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search3" placeholder="Cliente, Teléfono y Email"
+            onkeyup="searchFunction3()">
+        </div>
+        <div class="input-group col-sm col-md">
+          <div class="input-group-addon">
+            <a class="btn border">
+              <img src="../../node_modules/bootstrap-icons/icons/search.svg" alt="">
+            </a>
+          </div>
+          <input type="state" class="form-control" id="search4" placeholder="Empleado, Inicio y Fin"
+            onkeyup="searchFunction4()">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="" id="contenido">
+      <!--js-->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="editReport" tabindex="-1" aria-labelledby="modalEditReport" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Parte</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="mb-4">
+              <h3>
+                <img src="../../node_modules/bootstrap-icons/icons/file-earmark-text.svg" alt="" width="32">
+                Parte
+              </h3>
+              <hr>
+              <div class="form-row row ">
+                <div class="form-group col-sm mb-2">
+                  <label for="brandEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+                    ID
+                  </label>
+                  <input type="text" class="form-control" id="idEdit" disabled="disabled">
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="dateStartEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+                    Fecha parte
+                  </label>
+                  <input type="date" class="form-control" id="dateStartEdit" value="" required>
+                </div>
+              </div>
+              <div class="form-row row ">
+                <div class="form-group col-sm mb-2">
+                  <label for="dateApointmentEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+                    Fecha cita
+                  </label>
+                  <input type="date" class="form-control" id="dateApointmentEdit">
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="dateEndEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/calendar3.svg">
+                    Fecha fin
+                  </label>
+                  <input type="date" class="form-control" id="dateEndEdit">
+                </div>
+              </div>
+              <div class="form-row row">
+                <div class="form-group col-sm mb-2">
+                  <label for="priorityEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/bar-chart-fill.svg">
+                    Prioridad
+                  </label>
+                  <select class="form-select" aria-label="Default select example" id="priorityEdit">
+                    <option selected>Sin definir</option>
+                    <option>Alta</option>
+                    <option>Media</option>
+                    <option>Baja</option>
+                  </select>
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="stateEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/list-ul.svg" alt="">
+                    Estado *
+                  </label>
+                  <select class="form-select" id="stateEdit" required>
+                    <option>Abierto</option>
+                    <option>Pendiente</option>
+                    <option>Cerrado</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row row">
+                <div class="form-group col-sm mb-2">
+                  <label for="machineEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/tv.svg" alt="">
+                    Aparato
+                  </label>
+                  <input type="text" class="form-control" id="machineEdit">
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="brandEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/badge-tm.svg" alt="">
+                    Marca
+                  </label>
+                  <input type="text" class="form-control" id="brandEdit">
+                </div>
+              </div>
+              <div class="form-row row">
+                <div class="form-group col-sm mb-2">
+                  <label for="paymentEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/cash-stack.svg" alt="">
+                    Pago
+                  </label>
+                  <input type="number" class="form-control" id="paymentEdit">
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="paymentMethodEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/wallet2.svg" alt="">
+                    Método de pago
+                  </label>
+                  <select class="form-select" id="paymentMethodEdit" required>
+                    <option>Seleccionar método</option>
+                    <option>Efectivo</option>
+                    <option>Tarjeta</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group mb-2">
+                <label for="textareaEdit">
+                  <img src="../../node_modules/bootstrap-icons/icons/fonts.svg" alt="">
+                  Observaciones
+                </label>
+                <textarea class="form-control" id="textareaEdit" rows="3"></textarea>
+              </div>
+
+              <!-- Asignación -->
+              <h3 class="mt-5">
+                <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="" width="32">
+                Asignación
+              </h3>
+              <hr>
+              <div class="form-row row">
+                <div class="form-group col-sm mb-2">
+                  <label for="selectClientsEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+                    Cliente
+                  </label>
+                  <input type="text" class="form-control" id="selectClientsEdit" disabled="disabled">
+                </div>
+                <div class="form-group col-sm mb-2">
+                  <label for="selectEmployeesEdit">
+                    <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">
+                    Empleado
+                  </label>
+                  <select class="form-select" id="selectEmployeesEdit">
+
+                  </select>
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <a onclick="createDeleteModal()" class="btn btn-outline-danger">Eliminar</a>
+            <div>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-outline-primary" onclick="saveReportsChanges()">Guardar
+                cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--/.Modal-->
 
     <!--deleteModal-->
-  <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteModal">Confirmar acción</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ¿Quieres eliminar este Parte?
-        </div>
-        <div class="modal-footer" id="modalBtn">
-          <!--contenido js-->
+    <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModal">Confirmar acción</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Quieres eliminar este Parte?
+          </div>
+          <div class="modal-footer" id="modalBtn">
+            <!--contenido js-->
+          </div>
         </div>
       </div>
     </div>
+    <!--./deleteModal-->
+
+
+
+
+    <!--Toast éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="successToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Editar Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El parte ha sido editado con éxito!
+      </div>
+    </div>
   </div>
-  <!--./deleteModal-->
 
-<!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
+  <!--Toast fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="dangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Editar Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al editar el parte!
+      </div>
+    </div>
+  </div>
 
-      <script src="../../node_modules/jquery/dist/jquery.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-      <script src="../js/global.js"></script>
-      <script src="../js/reports.js"></script>
-      <script src="../js/btnEditReport.js"></script>
-    
+  <!--Toast delete éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="deleteSuccessToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Eliminar Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El parte ha sido eliminado con éxito!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast delete fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="deleteDangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Eliminar Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al eliminar el parte!
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <!--Icono "up"-->
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+      <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+    </a>
+
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/reports.js"></script>
+    <!--<script src="../js/btnEditReport.js"></script>-->
+
 </body>
+
 </html>

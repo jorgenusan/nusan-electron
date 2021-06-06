@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="../css/styles.css">
-      <link rel="stylesheet" href="../css/styles.css">
-      <title>Nusan Software</title>
-      
-  </head>
-  <body class="body m-0 vh-100 row justify-content-around align-content-center">
 
-    <!-- Container -->
-    <div class="container col-md-auto mt-5 pt-5 pb-5">
-      <div class="shadow row justify-content-center border rounded-3 bg-light">
-        <!-- Title -->
-        <div class="text-center mb-4 pt-5" id="contenedorImg">
-          <img id="logoNusan" src="../img/LogoCompleto250.png" alt="Responsive image" class="img-fluid">
-        </div>
-        
-        <!-- Form -->
-        <form class="col-10 mb-5 mt-5">
-          <div class="mb-3">
-            <label for="InputEmail" class="form-label">
-              <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
-              Email
-            </label>
-            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="email@example.com" required>
-            <div id="emailHelp" class="form-text">No compartiremos su email con nadie.</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon" />
+  <!--Title-->
+  <title>Nusan Software</title>
+</head>
+
+<body class="body m-0 vh-100 row justify-content-around align-content-center">
+  <!-- Container -->
+  <div class="container col-md-auto mt-5 pt-5 pb-5">
+    <div class="shadow row justify-content-center border rounded-3 bg-light">
+      <!-- Title -->
+      <div class="text-center mb-4 pt-5" id="contenedorImg">
+        <img id="logoNusan" src="../img/LogoCompleto250.png" alt="Responsive image" class="img-fluid" />
+      </div>
+
+      <!-- Form -->
+      <form class="col-10 mb-5 mt-5">
+        <div class="mb-3">
+          <label for="InputEmail" class="form-label">
+            <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="" />
+            Email
+          </label>
+          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
+            placeholder="email@example.com" required />
+          <div id="emailHelp" class="form-text">
+            No compartiremos su email con nadie.
           </div>
-          <div class="mb-3">
-            <label for="InputPassword" class="form-label">
-              <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
-              Contraseña
-            </label>
-            <div class="input-group" id="show_hide_password">
-              <input type="password" class="form-control" id="InputPassword" placeholder="*******" required>
-              <div class="input-group-addon">
-                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" ></a>
-              </div>
+        </div>
+        <div class="mb-3">
+          <label for="InputPassword" class="form-label">
+            <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="" />
+            Contraseña
+          </label>
+          <div class="input-group" id="show_hide_password">
+            <input type="password" class="form-control" id="InputPassword" placeholder="*******" required />
+            <div class="input-group-addon">
+              <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" /></a>
             </div>
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-          </div>
-          <button type="submit" class="btn btn-primary" id="btnLogin">Iniciar sesión</button>
-          
-          <div class="mt-5 pt-3 text-center">
-            <hr>
-            <a href="./recover.html" class="forgot-password text-decoration-none">¿Ha olvidado su contraseña?</a>
-          </div>
-        </form>
-        <!-- /.Form -->
-      </div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+        </div>
+        <button type="submit" class="btn btn-primary" id="btnLogin">
+          Iniciar sesión
+        </button>
+
+        <div class="mt-5 pt-3 text-center">
+          <hr />
+          <a href="./recover.html" class="forgot-password text-decoration-none">¿Ha olvidado su contraseña?</a>
+        </div>
+      </form>
+      <!-- /.Form -->
     </div>
-    <!-- /.Container -->
-    
-    <!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
-   
-      <!--Scripts-->
-      <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../js/login.js"></script>
-  </body>
+  </div>
+  <!-- /.Container -->
+
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg" />
+  </a>
+
+  <!--Scripts-->
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+
 </html>

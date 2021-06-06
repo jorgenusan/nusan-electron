@@ -86,7 +86,7 @@ function employees(actualEmp){
     }).done(function(data){
         empOptions(data, actualEmp);
     }).fail(function(error){
-        alert("Error al obtener los datos de la tabla.", error);
+        selectEmployeesEdit.innerHTML=`Error al obtener los datos de la tabla.`;
     })
 
 }
@@ -175,14 +175,13 @@ function saveReportsChanges(){
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){
-        location.reload();
         $('#editReport').modal('hide');
-        alert("El parte ha sido modificado correctamente.");
+        $('#successToast').toast('show');
+        location.reload(); //TODO cambiar
     }).fail(function(error){
-        alert("Error al modificar el parte.")
+        $('#dangerToast').toast('show');
     })    
 }
-
 
 
 //Eliminar un parte
@@ -194,9 +193,9 @@ console.log(deleteId)
         url: "http://localhost:8080/report/"+deleteId,
     }).done(function(data){
         $('#deleteModal').modal('hide');
-        alert("Parte eliminado correctamente");
+        $('#deleteSuccessToast').toast('show');
         location.reload();
     }).fail(function(error){
-        alert("Error al eliminar el parte.", error);
+        $('#deleteDangerToast').toast('show');
     })
 }
