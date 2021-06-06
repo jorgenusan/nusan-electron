@@ -16,10 +16,10 @@ $(document).ready(function(){
             data: formData,
             contentType: "application/json"
         }).done(function(data){
-            alert("El cliente ha sido creado correctamente.");
+            $('#successToast').toast('show');
             clean();
         }).fail(function(error){
-            alert("Error al crear el cliente.")
+            $('#dangerToast').toast('show');
         })
         
         event.preventDefault();

@@ -259,6 +259,71 @@
   </div>
   <!-- /.Container -->
 
+
+
+  <!--Toast éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="successToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Crear Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El parte ha sido creado con éxito!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="dangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Crear Parte</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al crear el parte!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast éxito Cliente-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="successToastCli" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Crear Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El cliente ha sido creado con éxito!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast fracaso Cliente-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="dangerToastCli" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Crear Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al crear el cliente!
+      </div>
+    </div>
+  </div>
+
+
+
+
   <!--Icono "up"-->
   <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
     <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">

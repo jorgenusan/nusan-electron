@@ -237,6 +237,69 @@
   </div>
   <!--./deleteModal-->
 
+
+  <!--Toast éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="successToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Editar Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El cliente ha sido editado con éxito!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="dangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Editar Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al editar el cliente!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast delete éxito-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="deleteSuccessToast" class="toast hide bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/check2.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Eliminar Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        El cliente ha sido eliminado con éxito!
+      </div>
+    </div>
+  </div>
+
+  <!--Toast delete fracaso-->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+    <div id="deleteDangerToast" class="toast hide bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="../../node_modules/bootstrap-icons/icons/x.svg" class="rounded me-2" alt="...">
+        <strong class="me-auto">Eliminar Cliente</strong>
+        <small>Ahora</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Error al eliminar el cliente!
+      </div>
+    </div>
+  </div>
+
+
+
   <!--Icono "up"-->
   <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
     <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">

@@ -29,7 +29,7 @@ function clients(){
     }).done(function(data){
         card(data);
     }).fail(function(error){
-        alert("Error al obtener los datos de la tabla.", error);
+        contenido.innerHTML = `Error al cargar los clientes. `;
     })
 
 }
@@ -185,11 +185,11 @@ function saveChanges(){
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){
-        location.reload();
         $('#editClientModal').modal('hide');
-        alert("El cliente ha sido modificado correctamente.");
+        $('#successToast').toast('show');
+        clients();
     }).fail(function(error){
-        alert("Error al modificar el cliente.")
+        $('#dangerToast').toast('show');
     })    
 }
 
@@ -201,11 +201,12 @@ function deleteClient(dni){
         type:"DELETE",
         url: "http://localhost:8080/clientDni/"+deleteDni,
     }).done(function(data){
-        $('#deleteClientModal').modal('hide');
-        alert("Cliente eliminado correctamente");
-        location.reload();
+        $('#deleteCliModal').modal('hide');
+        $('#editClientModal').modal('hide');
+        $('#deleteSuccessToast').toast('show');
+        clients();
     }).fail(function(error){
-        alert("Error al eliminar el cliente.", error);
+        $('#deleteDangerToast').toast('show');
     })
 
 }

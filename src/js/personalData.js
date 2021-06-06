@@ -79,10 +79,10 @@ function changeAccountData(){
             }).done(function(data){
                 login.password = newPass;
                 localStorage.setItem('login',JSON.stringify(login));
-                location.reload();
-                alert("El empleado ha sido modificado correctamente.");
+                $('#successToast').toast('show');
+                personalData();
             }).fail(function(error){
-                alert("Error al modificar el empleado.")
+                $('#dangerToast').toast('show');
             }) 
         }else{
             alert("Las contraseñas no coinciden");
@@ -137,10 +137,10 @@ function changePersonalData(){
         user.phoneNumber = number;
         user.dni = dni;
         sessionStorage.setItem('user',JSON.stringify(user));
-        location.reload();
-        alert("El empleado ha sido modificado correctamente.");
+        $('#successToast').toast('show');
+        personalData();
     }).fail(function(error){
-        alert("Error al modificar el empleado.")
+        $('#dangerToast').toast('show');
     }) 
 }
 

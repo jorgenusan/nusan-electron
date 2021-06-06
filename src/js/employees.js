@@ -30,7 +30,7 @@ function employees(){
     }).done(function(data){
         card(data);
     }).fail(function(error){
-        alert("Error al obtener los datos de la tabla.", error);
+        contenido.innerHTML=`Error al cargar los empleados.`;
     })
 
 }
@@ -114,10 +114,10 @@ function deleteEmp(dni){
         url: "http://localhost:8080/employeesDni/"+deleteDni,
     }).done(function(data){
         $('#deleteEmpModal').modal('hide');
-        alert("Empleado eliminado correctamente");
-        location.reload();
+        $('#deleteSuccessToast').toast('show');
+        employees();
     }).fail(function(error){
-        alert("Error al eliminar el empleado.", error);
+        $('#deleteDangerToast').toast('show');
     })
 
 }
@@ -213,11 +213,11 @@ function saveChanges(){
             data: formData,
             contentType: "application/json-patch+json"
         }).done(function(data){
-            location.reload();
             $('#editEmployeeModal').modal('hide');
-            alert("El cliente ha sido modificado correctamente.");
+            $('#successToast').toast('show');
+            employees();
         }).fail(function(error){
-            alert("Error al modificar el cliente.")
+            $('#dangerToast').toast('show');
         })  
     }else{
         alert("Las contraseás no existen");
