@@ -98,7 +98,7 @@ $("#contenido").on("click", function(evt) {
 
 //crear botones modal
 function btnDeleteClientModal(){
-    var dni = $("#inputDni").val();
+    var id = $("#idEdit").val();
 
     deleteCliBtn.innerHTML=''; //limpiamos los botones del modal
 
@@ -106,7 +106,7 @@ function btnDeleteClientModal(){
     deleteCliBtn.innerHTML +=
     `
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-    <button type="button" class="btn btn-primary" onclick=\"deleteClient('${dni}')\">Sí</button>
+    <button type="button" class="btn btn-primary" onclick=\"deleteClient('${id}')\">Sí</button>
     `
     //mostramos modal
     $('#deleteCliModal').modal('show');
@@ -194,12 +194,12 @@ function saveChanges(){
 }
 
 
-function deleteClient(dni){
-    var deleteDni = dni;
+function deleteClient(id){
+    var deleteId = id;
 
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/clientDni/"+deleteDni,
+        url: "http://localhost:8080/client/"+deleteId,
     }).done(function(data){
         $('#deleteCliModal').modal('hide');
         $('#editClientModal').modal('hide');
