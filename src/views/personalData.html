@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Nusan Software</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
 </head>
 
 <body>
-     <!--Load the navbar-->
+  <!--Load the navbar-->
   <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -70,72 +73,72 @@
   </div>
 
 
-    <!--Content-->
-    <div class="container pb-5">
-        <h3>Mis Datos</h3>
-        <div class="mb-5 mt-3" id="personalDataImg">
-            <!--Load from JS Header-->
-        </div>
-        <form class="row g-3">
-            <h4>Datos de mi cuenta</h4>
-            <div class="col-md-6 pt-md-4 pt-lg-0">
-                <label for="inputEmail" class="form-label">Email</label>
-                <input type="text" class="form-control" id="inputEmail" disabled>
-              </div>
-              <div class="col-md-2">
-                <label for="inputOldPass" class="dataPass form-label">Antigua contraseña</label>
-                <input type="password" class="form-control" id="inputOldPass" disabled>
-              </div>
-              <div class="col-md-2">
-                <label for="inputNewPass" class="dataPass form-label">Nueva contraseña</label>
-                <input type="password" class="form-control" id="inputNewPass" disabled>
-              </div>
-              <div class="col-md-2">
-                <label for="inputRepeatPass" class="dataPass form-label">Repetir contraseña</label>
-                <input type="password" class="form-control" id="inputRepeatPass" disabled>
-              </div>
-              <div class="col-12 mb-5 d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btn btn-outline-secondary" onclick="enableAccount()" id="editAccount">Editar</a>
-                <a class="btn btn-outline-primary" onclick="changeAccountData()">Guardar</a>
-              </div> 
-            <hr>
-            <h4>Datos Personales</h4>
-            <div class="col-md-6">
-              <label for="inputName" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="inputName" disabled>
-            </div>
-            <div class="col-md-6">
-              <label for="inputLastName" class="form-label">Apellidos</label>
-              <input type="text" class="form-control" id="inputLastName" disabled>
-            </div>
-            <div class="col-md-6">
-              <label for="inputNumber" class="form-label">Teléfono</label>
-              <input type="text" class="form-control" id="inputNumber" disabled>
-            </div>
-            <div class="col-md-6">
-                <label for="inputDni" class="form-label">DNI</label>
-                <input type="text" class="form-control" id="inputDni" disabled>
-              </div>
-            <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btn btn-outline-secondary" onclick="enablePersonal()" id="editpersonal">Editar</a>
-              <a class="btn btn-outline-primary" onclick="changePersonalData()">Guardar cambios</a>
-            </div>          
-          </form>
+  <!--Content-->
+  <div class="container pb-5">
+    <h3>Mis Datos</h3>
+    <div class="mb-5 mt-3" id="personalDataImg">
+      <!--Load from JS Header-->
     </div>
+    <form class="row g-3">
+      <h4>Datos de mi cuenta</h4>
+      <div class="col-md-6 pt-md-4 pt-lg-0">
+        <label for="inputEmail" class="form-label">Email</label>
+        <input type="text" class="form-control" id="inputEmail" disabled>
+      </div>
+      <div class="col-md-2">
+        <label for="inputOldPass" class="dataPass form-label">Antigua contraseña</label>
+        <input type="password" class="form-control" id="inputOldPass" disabled>
+      </div>
+      <div class="col-md-2">
+        <label for="inputNewPass" class="dataPass form-label">Nueva contraseña</label>
+        <input type="password" class="form-control" id="inputNewPass" disabled>
+      </div>
+      <div class="col-md-2">
+        <label for="inputRepeatPass" class="dataPass form-label">Repetir contraseña</label>
+        <input type="password" class="form-control" id="inputRepeatPass" disabled>
+      </div>
+      <div class="col-12 mb-5 d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-outline-secondary" onclick="enableAccount()" id="editAccount">Editar</a>
+        <a class="btn btn-outline-primary" onclick="changeAccountData()">Guardar</a>
+      </div>
+      <hr>
+      <h4>Datos Personales</h4>
+      <div class="col-md-6">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="inputName" disabled>
+      </div>
+      <div class="col-md-6">
+        <label for="inputLastName" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="inputLastName" disabled>
+      </div>
+      <div class="col-md-6">
+        <label for="inputNumber" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="inputNumber" disabled>
+      </div>
+      <div class="col-md-6">
+        <label for="inputDni" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="inputDni" disabled>
+      </div>
+      <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-outline-secondary" onclick="enablePersonal()" id="editpersonal">Editar</a>
+        <a class="btn btn-outline-primary" onclick="changePersonalData()">Guardar cambios</a>
+      </div>
+    </form>
+  </div>
 
 
 
-    <!--Icono "up"-->
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-        <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-    </a>
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+  </a>
 
-    <!--Scripts-->
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../js/global.js"></script>
-    <script src="../js/personalData.js"></script>
+  <!--Scripts-->
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../js/global.js"></script>
+  <script src="../js/personalData.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ function userReports(){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080//reportFilter/"+id+"/field/3"
+        url: "http://localhost:8080/reportFilter/"+id+"/field/3"
     }).done(function(data){
         tableReportOpen(data, userContent[0]) ;
     }).fail(function(error){
@@ -35,7 +35,7 @@ $(function(){
 
         $.ajax({
             type:"GET",
-            url: "http://localhost:8080//reportFilter/Abierto/field/1"
+            url: "http://localhost:8080/reportFilter/Abierto/field/1"
         }).done(function(data){
             tableReportOpen(data, openContent)
             
@@ -54,7 +54,7 @@ function todayReports(formatDate){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080//reportFilter/"+today+"/field/2"
+        url: "http://localhost:8080/reportFilter/"+today+"/field/2"
     }).done(function(data){
         tableReportOpen(data, todayContent)
         

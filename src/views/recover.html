@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="../css/styles.css">
-      <link rel="stylesheet" href="../css/styles.css">
-      <title>Nusan Software</title>
-      
-  </head>
-  <body class="m-0 vh-100 row justify-content-around align-content-center">
-    <!--Load the navbar-->
-    <div id="navbar"></div>
 
-    <!-- Container -->
-    <div class="container col-md-8 col-lg-7 col-xl-5 col-xxl-4 mt-5">
-      <div class="row justify-content-center border rounded-3 ">
-        <!-- Title -->
-        <div class="text-center mb-4 pt-5" id="contenedorImg">
-          <img id="logoNusan" src="../img/LogoCompleto250.png" alt="Responsive image" class="img-fluid">
-        </div>
-        
-        <!-- Form -->
-        <form class="col-10 mb-5 mt-5">
-            <div class="mb-5">
-                <h2>La contraseña se enviará a tu correo.</h2>
-            </div>
-            <div class="mb-5">
-                <label for="InputEmail" class="form-label">
-                <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
-                Email
-                </label>
-                <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="email@example.com" required>
-            </div>
-          <a href="./login.html" class="btn btn-primary">Cancelar</a>
-          <button type="submit" class="btn btn-primary" id="btnLogin">Enviar</button>
-        </form>
-        <!-- /.Form -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
+
+</head>
+
+<body class="m-0 vh-100 row justify-content-around align-content-center">
+  <!--Load the navbar-->
+  <div id="navbar"></div>
+
+  <!-- Container -->
+  <div class="container col-md-8 col-lg-7 col-xl-5 col-xxl-4 mt-5">
+    <div class="row justify-content-center border rounded-3 ">
+      <!-- Title -->
+      <div class="text-center mb-4 pt-5" id="contenedorImg">
+        <img id="logoNusan" src="../img/LogoCompleto250.png" alt="Responsive image" class="img-fluid">
       </div>
+
+      <!-- Form -->
+      <form class="col-10 mb-5 mt-5">
+        <div class="mb-5">
+          <h2>La contraseña se enviará a tu correo.</h2>
+        </div>
+        <div class="mb-5">
+          <label for="InputEmail" class="form-label">
+            <img src="../../node_modules/bootstrap-icons/icons/person-fill.svg" alt="">
+            Email
+          </label>
+          <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"
+            placeholder="email@example.com" required>
+        </div>
+        <a href="./login.html" class="btn btn-primary">Cancelar</a>
+        <button type="submit" class="btn btn-primary" id="btnLogin">Enviar</button>
+      </form>
+      <!-- /.Form -->
     </div>
-    <!-- /.Container -->
-    
-    <!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
-   
-      <!--Scripts-->
-      <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../js/login.js"></script>
-  </body>
+  </div>
+  <!-- /.Container -->
+
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+  </a>
+
+  <!--Scripts-->
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+
 </html>

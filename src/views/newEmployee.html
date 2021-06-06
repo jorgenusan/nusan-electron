@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Nusan Software</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
 </head>
+
 <body>
   <!--Load the navbar-->
-   <div id="navbar">
+  <div id="navbar">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e8f2fa">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><img src="../img/LogoCompleto100.png"></a>
@@ -65,115 +70,117 @@
     <div class="pb-5">
       <h2 class="visually-hidden">hidden</h2>
     </div>
-   </div>
+  </div>
 
-    <!-- Container -->
-    <div class="container mb-5">
+  <!-- Container -->
+  <div class="container mb-5">
 
-      <h1 class="text-center text-primary">Nuevo Empleado</h1>
-      <hr class="bg-primary">
+    <h1 class="text-center text-primary">Nuevo Empleado</h1>
+    <hr class="bg-primary">
 
-      <!--Form Report-->
-      <form class="needs-validation pt-3" novalidate>
+    <!--Form Report-->
+    <form class="needs-validation pt-3" novalidate>
 
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputName">
-              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
-              Nombre
-            </label>
-            <input type="text" class="form-control" id="inputName">
-          </div>
-          <div class="form-group col-sm">
-            <label for="inputLastName">
-              <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
-              Apellidos
-            </label>
-            <input type="text" class="form-control" id="inputLastName">
-          </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputName">
+            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+            Nombre
+          </label>
+          <input type="text" class="form-control" id="inputName">
         </div>
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputEmail">
-              <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
-              Email
-            </label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputDni">
-              <img src="../../node_modules/bootstrap-icons/icons/card-text.svg" alt="">
-              DNI
-            </label>
-            <input type="text" class="form-control" id="inputDni">
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputTel">
-              <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
-              Teléfono
-            </label>
-            <input type="tel" class="form-control" id="inputTel">
-          </div>
+        <div class="form-group col-sm">
+          <label for="inputLastName">
+            <img src="../../node_modules/bootstrap-icons/icons/file-earmark-person-fill.svg" alt="">
+            Apellidos
+          </label>
+          <input type="text" class="form-control" id="inputLastName">
         </div>
-        <div class="form-row row">
-          <div class="form-group col-sm mb-2">
-            <label for="inputRol">
-              <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">
-              Rol
-            </label>
-            <select class="form-select" id="inputRol">
-                <option>Empleado</option>
-                <option>Admin</option>
-              </select>
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputPassword">
-              <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
-              Contraseña
-            </label>
-            <div class="input-group" id="show_hide_password">
-              <input type="password" class="form-control" id="inputPassword" placeholder="*******" required onclick="help()">
-              <div class="input-group-addon">
-                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" ></a>
-              </div>
-            </div>
-            <div id="passwordHelp" class="form-text"></div>
-          </div>
-          <div class="form-group col-sm mb-2">
-            <label for="inputPassword">
-              <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
-              Repetir Contraseña
-            </label>
-            <div class="input-group" id="show_hide_password">
-              <input type="password" class="form-control" id="inputPassword2" placeholder="*******" required>
-              <div class="input-group-addon">
-                <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg" ></a>
-              </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputEmail">
+            <img src="../../node_modules/bootstrap-icons/icons/envelope-open-fill.svg" alt="">
+            Email
+          </label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="example@example.com">
+        </div>
+        <div class="form-group col-sm mb-2">
+          <label for="inputDni">
+            <img src="../../node_modules/bootstrap-icons/icons/card-text.svg" alt="">
+            DNI
+          </label>
+          <input type="text" class="form-control" id="inputDni">
+        </div>
+        <div class="form-group col-sm mb-2">
+          <label for="inputTel">
+            <img src="../../node_modules/bootstrap-icons/icons/telephone-fill.svg" alt="">
+            Teléfono
+          </label>
+          <input type="tel" class="form-control" id="inputTel">
+        </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-sm mb-2">
+          <label for="inputRol">
+            <img src="../../node_modules/bootstrap-icons/icons/people-fill.svg" alt="">
+            Rol
+          </label>
+          <select class="form-select" id="inputRol">
+            <option>Empleado</option>
+            <option>Admin</option>
+          </select>
+        </div>
+        <div class="form-group col-sm mb-2">
+          <label for="inputPassword">
+            <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
+            Contraseña
+          </label>
+          <div class="input-group" id="show_hide_password">
+            <input type="password" class="form-control" id="inputPassword" placeholder="*******" required
+              onclick="help()">
+            <div class="input-group-addon">
+              <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg"></a>
             </div>
           </div>
+          <div id="passwordHelp" class="form-text"></div>
         </div>
-        <div class="row justify-content-between">
-          <a href="../views/employees.html" class="btn btn-outline-secondary mt-3 col-md-2 col-lg-1">
-            <img src="../../node_modules/bootstrap-icons/icons/arrow-left.svg">
-              Volver
-          </a>
-          <button type="submit" class="btn btn-outline-primary mt-3 col-md-2 col-lg-1">Guardar</button>
+        <div class="form-group col-sm mb-2">
+          <label for="inputPassword">
+            <img src="../../node_modules/bootstrap-icons/icons/lock-fill.svg" alt="">
+            Repetir Contraseña
+          </label>
+          <div class="input-group" id="show_hide_password">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="*******" required>
+            <div class="input-group-addon">
+              <a class="btn border"><img src="../../node_modules/bootstrap-icons/icons/eye-fill.svg"></a>
+            </div>
+          </div>
         </div>
-      </form>
-      <!--Form final-->
-    </div>
-    <!-- /.Container -->
+      </div>
+      <div class="row justify-content-between">
+        <a href="../views/employees.html" class="btn btn-outline-secondary mt-3 col-md-2 col-lg-1">
+          <img src="../../node_modules/bootstrap-icons/icons/arrow-left.svg">
+          Volver
+        </a>
+        <button type="submit" class="btn btn-outline-primary mt-3 col-md-2 col-lg-1">Guardar</button>
+      </div>
+    </form>
+    <!--Form final-->
+  </div>
+  <!-- /.Container -->
 
-    <!--Icono "up"-->
-<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
-  <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
-</a>
+  <!--Icono "up"-->
+  <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
+    <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
+  </a>
 
-      <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-      <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-      <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script src="../js/global.js"></script>
-      <script src="../js/newEmployee.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../js/global.js"></script>
+  <script src="../js/newEmployee.js"></script>
 
 </body>
+
 </html>

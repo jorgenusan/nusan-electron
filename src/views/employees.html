@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Nusan Software</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Favicons -->
+  <link href="src/img/LogoBuilder.ico" rel="icon">
+  <!--Title-->
+  <title>Nusan Software</title>
 </head>
+
 <body>
   <!--Load the navbar-->
   <div id="navbar">
@@ -71,7 +76,7 @@
   <div class="container">
     <h1 class="text-primary text-center">Empleados</h1>
     <hr class="bg-primary">
-    
+
     <!-- order and search -->
     <div class="pb-3">
       <div class="form-row row mb-2">
@@ -79,7 +84,7 @@
           <a href="newEmployee.html">
             <button class="btn btn-outline-secondary">
               Nuevo Empleado
-            <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
+              <img src="../../node_modules/bootstrap-icons/icons/plus.svg" alt="">
             </button>
           </a>
         </div>
@@ -114,13 +119,13 @@
           </div>
           <input type="state" class="form-control" id="search2" placeholder="DNI" onkeyup="searchFunction2()">
         </div>
-      </div>     
+      </div>
     </div>
 
     <div class="row" id="contenido">
       <!--Contenido de employees.js-->
     </div>
-    
+
   </div>
   <!--./Container-->
 
@@ -188,9 +193,9 @@
                   Rol
                 </label>
                 <select class="form-select" id="inputRol">
-                    <option>Empleado</option>
-                    <option>Admin</option>
-                  </select>
+                  <option>Empleado</option>
+                  <option>Admin</option>
+                </select>
               </div>
             </div>
           </form>
@@ -198,11 +203,11 @@
         <div class="modal-footer justify-content-between">
           <button type="button" class="btn btn-outline-danger" id="btnDeleteModal" onclick="btnDeleteEmployeeModal()">
             Eliminar
-        </button>
-        <div>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-outline-primary" onclick="saveChanges()">Guardar cambios</button>
-        </div>
+          </button>
+          <div>
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-outline-primary" onclick="saveChanges()">Guardar cambios</button>
+          </div>
         </div>
       </div>
     </div>
@@ -210,7 +215,8 @@
   <!--/.Modal-->
 
   <!--deleteModal-->
-  <div class="modal fade" id="deleteEmpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="deleteEmpModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -227,7 +233,7 @@
     </div>
   </div>
   <!--./deleteModal-->
-  
+
   <!--Icono "up"-->
   <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top">
     <img src="../../node_modules/bootstrap-icons/icons/caret-up-fill.svg">
@@ -239,4 +245,5 @@
   <script src="../js/global.js"></script>
   <script src="../js/employees.js"></script>
 </body>
+
 </html>
