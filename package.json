@@ -24,7 +24,7 @@
       "installerIcon": "src/img/LogoBuilder.ico",
       "uninstallerIcon": "src/img/LogoBuilder.ico",
       "uninstallDisplayName": "Nusan",
-      "license": "license.txt",
+      "license": "LICENSE.md",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
