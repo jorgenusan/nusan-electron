@@ -414,6 +414,7 @@ console.log(deleteId)
         url: "http://localhost:8080/report/"+deleteId,
     }).done(function(data){
         $('#deleteModal').modal('hide');
+        $('#editReport').modal('hide');
         $('#deleteSuccessToast').toast('show');
         getData();
     }).fail(function(error){

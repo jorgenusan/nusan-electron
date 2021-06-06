@@ -114,6 +114,7 @@ function deleteEmp(dni){
         url: "http://localhost:8080/employeesDni/"+deleteDni,
     }).done(function(data){
         $('#deleteEmpModal').modal('hide');
+        $('#editEmployeeModal').modal('hide');
         $('#deleteSuccessToast').toast('show');
         employees();
     }).fail(function(error){
