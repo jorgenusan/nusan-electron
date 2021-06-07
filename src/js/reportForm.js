@@ -113,9 +113,10 @@ function createNewReport(idClient){
     let emp= $("#selectEmployees").val();
     let exp = new RegExp("[0-9]+");
     let result = emp.match(exp);
+    console.log(result)
     let idEmployee;
     if(result == null){
-        idEmployee = "";
+
     }else{
         idEmployee = result[0];
     }
@@ -152,12 +153,12 @@ function createNewReport(idClient){
 function clear(){
     $("#inputDateStart").val("");
     $("#inputDateApointment").val("");
-    $("#inputPriority").val("");
-    $("#inputState").val("");
+    $("#inputPriority").val("Sin definir");
+    $("#inputState").val("Abierto");
     $("#inputMachine").val("");
     $("#inputBrand").val("");
     $("#FormControlTextarea").val("");
-    $("#selectClients").val("");
+    $("#selectClients").val("Nuevo");
     $("#inputName").val("");
     $("#inputLastName").val("");
     $("#inputEmail").val("");
@@ -165,7 +166,7 @@ function clear(){
     $("#inputTel").val("");
     $("#inputAddress").val("");
     $("#inputCity").val("");
-    $("#selectEmployees").val("");
+    $("#selectEmployees").val("Seleccionar empleado");
     $("#inputDateEnd").val("");
     
 }

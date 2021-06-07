@@ -41,7 +41,7 @@ $(document).ready(function(){
         $('#inputTel').val("");
         $('#inputRol').val("");
         $('#inputPassword').val("");
-        $('#inputPassword2').val("");
+        $('#inputPassword2').val("Empleado");
     }
 
 });

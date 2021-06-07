@@ -6,7 +6,7 @@ function employees(){
     let orderBySelect = document.getElementById("orderBySelect");
     let orderSelected = orderBySelect.value
     let sortBy = "id";
-    if(orderSelected == 1){
+    if(orderSelected == 1 || orderSelected == 0){
         sortBy = "id";
     }else if(orderSelected == 2){
         sortBy = "name";
