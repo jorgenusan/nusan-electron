@@ -73,7 +73,7 @@ function changeAccountData(){
         
             $.ajax({
                 type:"PATCH",
-                url: "http://localhost:8080/employees/"+user.id,
+                url: "https://nusan-api.herokuapp.com/employees/"+user.id,
                 data: formData,
                 contentType: "application/json-patch+json"
             }).done(function(data){
@@ -128,7 +128,7 @@ function changePersonalData(){
 
     $.ajax({
         type:"PATCH",
-        url: "http://localhost:8080/employees/"+user.id,
+        url: "https://nusan-api.herokuapp.com/employees/"+user.id,
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){

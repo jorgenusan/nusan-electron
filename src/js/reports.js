@@ -29,7 +29,7 @@ function getData(){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allReports",
+        url: "https://nusan-api.herokuapp.com/allReports",
         dataType: "json",
         data: getReports,
         contentType: "application/json"   
@@ -244,7 +244,7 @@ function getTdId(row){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/report/"+idreport,
+        url: "https://nusan-api.herokuapp.com/report/"+idreport,
     }).done(function(data){
         openEditModal(data);
     }).fail(function(error){
@@ -300,7 +300,7 @@ function employees(actualEmp){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allEmployees",
+        url: "https://nusan-api.herokuapp.com/allEmployees",
         dataType: "json",
         data: getEmp,
         contentType: "application/json"   
@@ -392,7 +392,7 @@ function saveReportsChanges(){
 
     $.ajax({
         type:"PATCH",
-        url: "http://localhost:8080/report/"+id,
+        url: "https://nusan-api.herokuapp.com/report/"+id,
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){
@@ -411,7 +411,7 @@ function deleteYes(id){
 console.log(deleteId)
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/report/"+deleteId,
+        url: "https://nusan-api.herokuapp.com/report/"+deleteId,
     }).done(function(data){
         $('#deleteModal').modal('hide');
         $('#editReport').modal('hide');

@@ -23,7 +23,7 @@ function employees(){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allEmployees",
+        url: "https://nusan-api.herokuapp.com/allEmployees",
         dataType: "json",
         data: getEmp,
         contentType: "application/json"   
@@ -111,7 +111,7 @@ function deleteEmp(dni){
 
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/employeesDni/"+deleteDni,
+        url: "https://nusan-api.herokuapp.com/employeesDni/"+deleteDni,
     }).done(function(data){
         $('#deleteEmpModal').modal('hide');
         $('#editEmployeeModal').modal('hide');
@@ -130,7 +130,7 @@ function getCardDni(data){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/employeesDni/"+dni,
+        url: "https://nusan-api.herokuapp.com/employeesDni/"+dni,
     }).done(function(data){
         openEditEmpModal(data);
     }).fail(function(error){
@@ -210,7 +210,7 @@ function saveChanges(){
         console.log(formData);
         $.ajax({
             type:"PATCH",
-            url: "http://localhost:8080/employees/"+id,
+            url: "https://nusan-api.herokuapp.com/employees/"+id,
             data: formData,
             contentType: "application/json-patch+json"
         }).done(function(data){

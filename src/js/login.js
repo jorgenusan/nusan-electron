@@ -17,7 +17,7 @@ $(document).ready(function(){
     
             $.ajax({
                 type:"POST",
-                url: "http://localhost:8080/login",
+                url: "https://nusan-api.herokuapp.com/login",
                 data: formData,
                 contentType: "application/json"
             }).done(function(data){
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
             await $.ajax({
                 type:"GET",
-                url: "http://localhost:8080/employeesEmail/"+userEmail,
+                url: "https://nusan-api.herokuapp.com/employeesEmail/"+userEmail,
             }).done(function(data){
                 sessionStorage.setItem('user', JSON.stringify(data));
                 window.location.replace("./index.html");
