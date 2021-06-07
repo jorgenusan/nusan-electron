@@ -17,7 +17,7 @@ $(document).ready(function(){
         
             $.ajax({
                 type:"POST",
-                url: "http://localhost:8080/employees",
+                url: "https://nusan-api.herokuapp.com/employees",
                 data: formData,
                 contentType: "application/json"
             }).done(function(data){
@@ -39,7 +39,7 @@ $(document).ready(function(){
         $('#inputDni').val("");
         $('#inputEmail').val("");
         $('#inputTel').val("");
-        $('#inputRol').val("");
+        $('#inputRol').val("Empleado");
         $('#inputPassword').val("");
         $('#inputPassword2').val("");
     }

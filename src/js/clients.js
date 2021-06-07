@@ -5,7 +5,7 @@ function clients(){
     let orderBySelect = document.getElementById("orderBySelect");
     let orderSelected = orderBySelect.value
     let sortBy = "id";
-    if(orderSelected == 1){
+    if(orderSelected == 1 || orderSelected == 0){
         sortBy = "id";
     }else if(orderSelected == 2){
         sortBy = "name";
@@ -22,7 +22,7 @@ function clients(){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allClients",
+        url: "https://nusan-api.herokuapp.com/allClients",
         dataType: "json",
         data: getCli,
         contentType: "application/json"   
@@ -118,7 +118,7 @@ function getCardDni(data){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/clientDni/"+dni,
+        url: "https://nusan-api.herokuapp.com/clientDni/"+dni,
     }).done(function(data){
         openEditClientModal(data);
     }).fail(function(error){
@@ -181,7 +181,7 @@ function saveChanges(){
     console.log(formData);
     $.ajax({
         type:"PATCH",
-        url: "http://localhost:8080/client/"+id,
+        url: "https://nusan-api.herokuapp.com/client/"+id,
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){
@@ -199,7 +199,7 @@ function deleteClient(id){
 
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/client/"+deleteId,
+        url: "https://nusan-api.herokuapp.com/client/"+deleteId,
     }).done(function(data){
         $('#deleteCliModal').modal('hide');
         $('#editClientModal').modal('hide');

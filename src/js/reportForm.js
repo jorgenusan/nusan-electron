@@ -10,7 +10,7 @@ function clients(){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allClients",
+        url: "https://nusan-api.herokuapp.com/allClients",
         dataType: "json",
         data: getCli,
         contentType: "application/json"   
@@ -43,7 +43,7 @@ function employees(){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allEmployees",
+        url: "https://nusan-api.herokuapp.com/allEmployees",
         dataType: "json",
         data: getEmp,
         contentType: "application/json"   
@@ -96,7 +96,7 @@ function createNewClient(){
     
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/client",
+        url: "https://nusan-api.herokuapp.com/client",
         data: formData,
         contentType: "application/json"
     }).done(function(data){
@@ -113,9 +113,10 @@ function createNewReport(idClient){
     let emp= $("#selectEmployees").val();
     let exp = new RegExp("[0-9]+");
     let result = emp.match(exp);
+    console.log(result)
     let idEmployee;
     if(result == null){
-        idEmployee = "";
+
     }else{
         idEmployee = result[0];
     }
@@ -137,7 +138,7 @@ function createNewReport(idClient){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/report",
+        url: "https://nusan-api.herokuapp.com/report",
         data: formData,
         contentType: "application/json"
     }).done(function(data){
@@ -152,12 +153,12 @@ function createNewReport(idClient){
 function clear(){
     $("#inputDateStart").val("");
     $("#inputDateApointment").val("");
-    $("#inputPriority").val("");
-    $("#inputState").val("");
+    $("#inputPriority").val("Sin definir");
+    $("#inputState").val("Abierto");
     $("#inputMachine").val("");
     $("#inputBrand").val("");
     $("#FormControlTextarea").val("");
-    $("#selectClients").val("");
+    $("#selectClients").val("Nuevo");
     $("#inputName").val("");
     $("#inputLastName").val("");
     $("#inputEmail").val("");
@@ -165,7 +166,7 @@ function clear(){
     $("#inputTel").val("");
     $("#inputAddress").val("");
     $("#inputCity").val("");
-    $("#selectEmployees").val("");
+    $("#selectEmployees").val("Seleccionar empleado");
     $("#inputDateEnd").val("");
     
 }

@@ -12,7 +12,7 @@ $(document).ready(function(){
         
         $.ajax({
             type:"POST",
-            url: "http://localhost:8080/client",
+            url: "https://nusan-api.herokuapp.com/client",
             data: formData,
             contentType: "application/json"
         }).done(function(data){

@@ -10,7 +10,7 @@ function userReports(){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/reportFilter/"+id+"/field/3"
+        url: "https://nusan-api.herokuapp.com/reportFilter/"+id+"/field/3"
     }).done(function(data){
         tableReportOpen(data, userContent[0]) ;
     }).fail(function(error){
@@ -35,7 +35,7 @@ $(function(){
 
         $.ajax({
             type:"GET",
-            url: "http://localhost:8080/reportFilter/Abierto/field/1"
+            url: "https://nusan-api.herokuapp.com/reportFilter/Abierto/field/1"
         }).done(function(data){
             tableReportOpen(data, openContent)
             
@@ -54,7 +54,7 @@ function todayReports(formatDate){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/reportFilter/"+today+"/field/2"
+        url: "https://nusan-api.herokuapp.com/reportFilter/"+today+"/field/2"
     }).done(function(data){
         tableReportOpen(data, todayContent)
         
@@ -189,7 +189,7 @@ function getTdId(row){
 
     $.ajax({
         type:"GET",
-        url: "http://localhost:8080/report/"+idreport,
+        url: "https://nusan-api.herokuapp.com/report/"+idreport,
     }).done(function(data){
         openEditModal(data);
     }).fail(function(error){
@@ -245,7 +245,7 @@ function employees(actualEmp){
 
     $.ajax({
         type:"POST",
-        url: "http://localhost:8080/allEmployees",
+        url: "https://nusan-api.herokuapp.com/allEmployees",
         dataType: "json",
         data: getEmp,
         contentType: "application/json"   
@@ -337,7 +337,7 @@ function saveReportsChanges(){
 
     $.ajax({
         type:"PATCH",
-        url: "http://localhost:8080/report/"+id,
+        url: "https://nusan-api.herokuapp.com/report/"+id,
         data: formData,
         contentType: "application/json-patch+json"
     }).done(function(data){
@@ -356,7 +356,7 @@ function deleteYes(id){
 console.log(deleteId)
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:8080/report/"+deleteId,
+        url: "https://nusan-api.herokuapp.com/report/"+deleteId,
     }).done(function(data){
         $('#deleteModal').modal('hide');
         $('#editReport').modal('hide');
