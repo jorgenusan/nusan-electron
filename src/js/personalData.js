@@ -79,10 +79,12 @@ function changeAccountData(){
             }).done(function(data){
                 login.password = newPass;
                 localStorage.setItem('login',JSON.stringify(login));
+                disableAccount();
                 $('#successToast').toast('show');
                 personalData();
             }).fail(function(error){
                 $('#dangerToast').toast('show');
+                disableAccount();
             }) 
         }else{
             alert("Las contraseñas no coinciden");
@@ -138,9 +140,11 @@ function changePersonalData(){
         user.dni = dni;
         sessionStorage.setItem('user',JSON.stringify(user));
         $('#successToast').toast('show');
+        disablePersonal();
         personalData();
     }).fail(function(error){
         $('#dangerToast').toast('show');
+        disablePersonal();
     }) 
 }
 
