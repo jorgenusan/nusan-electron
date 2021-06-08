@@ -51,7 +51,7 @@ function changeAccountData(){
     let userStr = sessionStorage.getItem('user');
     let user = JSON.parse(userStr);
     
-    let email = $("#inputEmail").val(user.email);
+    let email = $("#inputEmail").val();
     let oldPass = $("#inputOldPass").val();
     let newPass = $("#inputNewPass").val();
     let repeatPass = $("#inputRepeatPass").val();
