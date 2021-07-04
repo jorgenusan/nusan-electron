@@ -2,6 +2,19 @@
  
  ![Image text](https://github.com/jorgenusan/nusan-electron/blob/master/src/img/LogoCompleto200.png)
  
+ ## Table of Contents
+ 
+ * [About](#about)
+   * [Technologies](#technologies-computer)
+ * [Download Installer](#download-installer)
+   * [Admin User](#admin-user) 
+ * [Getting Started](#getting-started-rocket)
+   * [Prerequisites](#prerequisites-clipboard) 
+ * [How to use](#how-to-use-gear)
+ * [Start](#start)
+ * [Build-installer](#build-installer)
+ * [Author](#author)
+ 
  ## About
  
  Nusan is a desktop application for small and medium businesses, aimed at the world of repair. 
@@ -78,8 +91,8 @@ yarn install
 yarn run start
 ```
 
-**Note**: You will need to download the back-end to be able to access and work on the application.
-Access the back-end repository located in the About section
+>**Note**: 
+>You will need to download the back-end to be able to access and work on the application.Access the back-end repository located in the About section
 
 ## Build-installer
 
