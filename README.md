@@ -49,10 +49,6 @@ In this way you can use the application if you don't want to touch the code.
 
 [Nusan Web](https://nusanweb.herokuapp.com/)
 
-### Admin User:
-
-* Email: admin@gmail.com
-* Password: Admin1234
 
 ## Getting Started :rocket:
 
